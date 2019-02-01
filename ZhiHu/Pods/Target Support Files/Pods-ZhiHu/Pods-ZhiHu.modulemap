@@ -1,0 +1,6 @@
+module Pods_ZhiHu {
+  umbrella header "Pods-ZhiHu-umbrella.h"
+
+  export *
+  module * { export * }
+}

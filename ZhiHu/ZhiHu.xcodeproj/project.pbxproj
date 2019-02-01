@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FA5666E0B2C1531D347A958 /* libPods-ZhiHu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
 		F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E194220431BB004D2555 /* FirstViewController.swift */; };
 		F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E196220431BB004D2555 /* SecondViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.release.xcconfig"; sourceTree = "<group>"; };
+		20F7382599C405E07E0EC563 /* Pods-ZhiHu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.debug.xcconfig"; sourceTree = "<group>"; };
+		F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E192220431BB004D2555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C3E194220431BB004D2555 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA5666E0B2C1531D347A958 /* libPods-ZhiHu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9CF128CD3BA75894B4F92D17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20F7382599C405E07E0EC563 /* Pods-ZhiHu.debug.xcconfig */,
+				13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F8C3E186220431BB004D2555 = {
 			isa = PBXGroup;
 			children = (
 				F8C3E191220431BB004D2555 /* ZhiHu */,
 				F8C3E190220431BB004D2555 /* Products */,
+				9CF128CD3BA75894B4F92D17 /* Pods */,
+				FD05C0795D5512840B39E98C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +83,14 @@
 			path = ZhiHu;
 			sourceTree = "<group>";
 		};
+		FD05C0795D5512840B39E98C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8C3E1A3220431BD004D2555 /* Build configuration list for PBXNativeTarget "ZhiHu" */;
 			buildPhases = (
+				5E78ECBE949D96F38E10A977 /* [CP] Check Pods Manifest.lock */,
 				F8C3E18B220431BB004D2555 /* Sources */,
 				F8C3E18C220431BB004D2555 /* Frameworks */,
 				F8C3E18D220431BB004D2555 /* Resources */,
@@ -132,6 +157,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E78ECBE949D96F38E10A977 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZhiHu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8C3E18B220431BB004D2555 /* Sources */ = {
@@ -282,11 +332,13 @@
 		};
 		F8C3E1A4220431BD004D2555 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20F7382599C405E07E0EC563 /* Pods-ZhiHu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA3S34K4EA;
 				INFOPLIST_FILE = ZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +352,13 @@
 		};
 		F8C3E1A5220431BD004D2555 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RA3S34K4EA;
 				INFOPLIST_FILE = ZhiHu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
