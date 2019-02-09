@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FA5666E0B2C1531D347A958 /* libPods-ZhiHu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */; };
+		32E1331CAFF69202B8C30B68 /* Pods_ZhiHu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D67B0B5ECC66AC6F4C5EAC /* Pods_ZhiHu.framework */; };
+		F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810501E220EC83C001C34BC /* ZHHomeController.swift */; };
+		F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105020220EF917001C34BC /* ZHIdeaController.swift */; };
+		F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105022220EF92E001C34BC /* ZHCollegeViewController.swift */; };
+		F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105024220EF938001C34BC /* ZHMessageViewController.swift */; };
+		F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105026220EF942001C34BC /* ZHMineViewController.swift */; };
+		F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105028220EFACD001C34BC /* ZHViewController.swift */; };
+		F810502F220EFD27001C34BC /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810502E220EFD27001C34BC /* Const.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
 		F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E194220431BB004D2555 /* FirstViewController.swift */; };
 		F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E196220431BB004D2555 /* SecondViewController.swift */; };
@@ -19,7 +26,14 @@
 /* Begin PBXFileReference section */
 		13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.release.xcconfig"; sourceTree = "<group>"; };
 		20F7382599C405E07E0EC563 /* Pods-ZhiHu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.debug.xcconfig"; sourceTree = "<group>"; };
-		F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhiHu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27D67B0B5ECC66AC6F4C5EAC /* Pods_ZhiHu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F810501E220EC83C001C34BC /* ZHHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeController.swift; sourceTree = "<group>"; };
+		F8105020220EF917001C34BC /* ZHIdeaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHIdeaController.swift; sourceTree = "<group>"; };
+		F8105022220EF92E001C34BC /* ZHCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHCollegeViewController.swift; sourceTree = "<group>"; };
+		F8105024220EF938001C34BC /* ZHMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHMessageViewController.swift; sourceTree = "<group>"; };
+		F8105026220EF942001C34BC /* ZHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHMineViewController.swift; sourceTree = "<group>"; };
+		F8105028220EFACD001C34BC /* ZHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHViewController.swift; sourceTree = "<group>"; };
+		F810502E220EFD27001C34BC /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E192220431BB004D2555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C3E194220431BB004D2555 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FA5666E0B2C1531D347A958 /* libPods-ZhiHu.a in Frameworks */,
+				32E1331CAFF69202B8C30B68 /* Pods_ZhiHu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +63,90 @@
 				13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F8105018220EC77E001C34BC /* ZhiHu */ = {
+			isa = PBXGroup;
+			children = (
+				F8105019220EC78B001C34BC /* Home */,
+				F810501D220EC7AD001C34BC /* Idea */,
+				F810501C220EC7A7001C34BC /* College */,
+				F810501B220EC7A2001C34BC /* Message */,
+				F810501A220EC79B001C34BC /* Mine */,
+			);
+			path = ZhiHu;
+			sourceTree = "<group>";
+		};
+		F8105019220EC78B001C34BC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F810501E220EC83C001C34BC /* ZHHomeController.swift */,
+				F810502A220EFC2A001C34BC /* Focus */,
+				F810502B220EFC3E001C34BC /* Recommend */,
+				F810502C220EFC42001C34BC /* Hot */,
+				F810502D220EFC46001C34BC /* Video */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F810501A220EC79B001C34BC /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F8105026220EF942001C34BC /* ZHMineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F810501B220EC7A2001C34BC /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F8105024220EF938001C34BC /* ZHMessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F810501C220EC7A7001C34BC /* College */ = {
+			isa = PBXGroup;
+			children = (
+				F8105022220EF92E001C34BC /* ZHCollegeViewController.swift */,
+			);
+			path = College;
+			sourceTree = "<group>";
+		};
+		F810501D220EC7AD001C34BC /* Idea */ = {
+			isa = PBXGroup;
+			children = (
+				F8105020220EF917001C34BC /* ZHIdeaController.swift */,
+			);
+			path = Idea;
+			sourceTree = "<group>";
+		};
+		F810502A220EFC2A001C34BC /* Focus */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Focus;
+			sourceTree = "<group>";
+		};
+		F810502B220EFC3E001C34BC /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recommend;
+			sourceTree = "<group>";
+		};
+		F810502C220EFC42001C34BC /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Hot;
+			sourceTree = "<group>";
+		};
+		F810502D220EFC46001C34BC /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		F8C3E186220431BB004D2555 = {
@@ -73,6 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				F8C3E192220431BB004D2555 /* AppDelegate.swift */,
+				F8105028220EFACD001C34BC /* ZHViewController.swift */,
+				F810502E220EFD27001C34BC /* Const.swift */,
+				F8105018220EC77E001C34BC /* ZhiHu */,
 				F8C3E194220431BB004D2555 /* FirstViewController.swift */,
 				F8C3E196220431BB004D2555 /* SecondViewController.swift */,
 				F8C3E198220431BB004D2555 /* Main.storyboard */,
@@ -86,7 +187,7 @@
 		FD05C0795D5512840B39E98C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F30C8994B50BFED58F40CFA3 /* libPods-ZhiHu.a */,
+				27D67B0B5ECC66AC6F4C5EAC /* Pods_ZhiHu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,6 +203,7 @@
 				F8C3E18B220431BB004D2555 /* Sources */,
 				F8C3E18C220431BB004D2555 /* Frameworks */,
 				F8C3E18D220431BB004D2555 /* Resources */,
+				ECC4DA5C33516466D7676B8C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +283,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ECC4DA5C33516466D7676B8C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DNSPageView/DNSPageView.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/JXMarqueeView/JXMarqueeView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/LTScrollView/LTScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/StreamingKit/StreamingKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DNSPageView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXMarqueeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StreamingKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -188,9 +342,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
+				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
+				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
+				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,
 				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
+				F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */,
 				F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */,
+				F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */,
+				F810502F220EFD27001C34BC /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

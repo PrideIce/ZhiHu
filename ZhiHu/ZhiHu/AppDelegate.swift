@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESTabBarController_swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        let barController = ESTabBarController()
+        barController.delegate = self as? UITabBarControllerDelegate
+        self.window?.rootViewController = barController
+        self.window?.makeKeyAndVisible()
+        
+        let vc1 = ZHHomeController()
+        let vc2 = ZHIdeaController()
+        let vc3 = ZHCollegeViewController()
+        let vc4 = ZHMessageViewController()
+        let vc5 = ZHMineViewController()
+        vc1.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "首页", image: UIImage(named: "Night_Tabbar_Feed_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_Feed_Highlight_28x28_"))
+        vc2.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "想法", image: UIImage(named: "Night_Tabbar_DB_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_DB_Highlight_28x28_"))
+        vc3.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "大学", image: UIImage(named: "Night_Tabbar_Shop_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_Shop_Highlight_28x28_"))
+        vc4.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "消息", image: UIImage(named: "Night_Tabbar_Notifications_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_Notifications_Highlight_28x28_"))
+        vc5.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "我", image: UIImage(named: "Night_Tabbar_More_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_More_Highlight_28x28_"))
+        
+        barController.viewControllers = [vc1, vc2, vc3, vc4, vc5]
         return true
     }
 
