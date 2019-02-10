@@ -33,7 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         vc4.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "消息", image: UIImage(named: "Night_Tabbar_Notifications_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_Notifications_Highlight_28x28_"))
         vc5.tabBarItem = ESTabBarItem.init(ESTabBarItemContentView(), title: "我", image: UIImage(named: "Night_Tabbar_More_Normal_28x28_"), selectedImage: UIImage(named: "Night_Tabbar_More_Highlight_28x28_"))
         
-        barController.viewControllers = [vc1, vc2, vc3, vc4, vc5]
+        let n1 = UINavigationController.init(rootViewController: vc1)
+        let n2 = UINavigationController.init(rootViewController: vc2)
+        let n3 = UINavigationController.init(rootViewController: vc3)
+        let n4 = UINavigationController.init(rootViewController: vc4)
+        let n5 = UINavigationController.init(rootViewController: vc5)
+        
+        barController.viewControllers = [n1, n2, n3, n4, n5]
         return true
     }
 

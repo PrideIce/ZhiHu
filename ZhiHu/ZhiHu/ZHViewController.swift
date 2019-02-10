@@ -14,5 +14,6 @@ class ZHViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.white
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

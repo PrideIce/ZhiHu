@@ -15,6 +15,11 @@
 		F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105026220EF942001C34BC /* ZHMineViewController.swift */; };
 		F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105028220EFACD001C34BC /* ZHViewController.swift */; };
 		F810502F220EFD27001C34BC /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810502E220EFD27001C34BC /* Const.swift */; };
+		F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105030220FEEC6001C34BC /* ZHHomeSearchVC.swift */; };
+		F8105033220FEEC6001C34BC /* ZHHomeSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8105031220FEEC6001C34BC /* ZHHomeSearchVC.xib */; };
+		F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503522100C25001C34BC /* UIButton+ZHEx.swift */; };
+		F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */; };
+		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
 		F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E194220431BB004D2555 /* FirstViewController.swift */; };
 		F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E196220431BB004D2555 /* SecondViewController.swift */; };
@@ -34,6 +39,11 @@
 		F8105026220EF942001C34BC /* ZHMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHMineViewController.swift; sourceTree = "<group>"; };
 		F8105028220EFACD001C34BC /* ZHViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHViewController.swift; sourceTree = "<group>"; };
 		F810502E220EFD27001C34BC /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F8105030220FEEC6001C34BC /* ZHHomeSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeSearchVC.swift; sourceTree = "<group>"; };
+		F8105031220FEEC6001C34BC /* ZHHomeSearchVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZHHomeSearchVC.xib; sourceTree = "<group>"; };
+		F810503522100C25001C34BC /* UIButton+ZHEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ZHEx.swift"; sourceTree = "<group>"; };
+		F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeBaseCell.swift; sourceTree = "<group>"; };
+		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E192220431BB004D2555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C3E194220431BB004D2555 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				F810501E220EC83C001C34BC /* ZHHomeController.swift */,
+				F8105030220FEEC6001C34BC /* ZHHomeSearchVC.swift */,
+				F8105031220FEEC6001C34BC /* ZHHomeSearchVC.xib */,
 				F810502A220EFC2A001C34BC /* Focus */,
 				F810502B220EFC3E001C34BC /* Recommend */,
 				F810502C220EFC42001C34BC /* Hot */,
@@ -131,6 +143,8 @@
 		F810502B220EFC3E001C34BC /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				F810503A22101D46001C34BC /* ZHRecommendVC.swift */,
+				F8105037221016BC001C34BC /* View */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -147,6 +161,22 @@
 			children = (
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		F810503422100B8A001C34BC /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F810503522100C25001C34BC /* UIButton+ZHEx.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F8105037221016BC001C34BC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F8C3E186220431BB004D2555 = {
@@ -174,6 +204,7 @@
 				F8105028220EFACD001C34BC /* ZHViewController.swift */,
 				F810502E220EFD27001C34BC /* Const.swift */,
 				F8105018220EC77E001C34BC /* ZhiHu */,
+				F810503422100B8A001C34BC /* Category */,
 				F8C3E194220431BB004D2555 /* FirstViewController.swift */,
 				F8C3E196220431BB004D2555 /* SecondViewController.swift */,
 				F8C3E198220431BB004D2555 /* Main.storyboard */,
@@ -253,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */,
+				F8105033220FEEC6001C34BC /* ZHHomeSearchVC.xib in Resources */,
 				F8C3E19C220431BD004D2555 /* Assets.xcassets in Resources */,
 				F8C3E19A220431BB004D2555 /* Main.storyboard in Resources */,
 			);
@@ -344,13 +376,17 @@
 			files = (
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
+				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
+				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
 				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,
 				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
 				F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */,
+				F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */,
 				F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */,
 				F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */,
+				F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */,
 				F810502F220EFD27001C34BC /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
