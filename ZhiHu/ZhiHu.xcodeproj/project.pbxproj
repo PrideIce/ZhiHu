@@ -20,12 +20,15 @@
 		F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503522100C25001C34BC /* UIButton+ZHEx.swift */; };
 		F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */; };
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
+		F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820F822128AA200A780EF /* RecommendModel.swift */; };
+		F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
 		F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E194220431BB004D2555 /* FirstViewController.swift */; };
 		F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E196220431BB004D2555 /* SecondViewController.swift */; };
 		F8C3E19A220431BB004D2555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C3E198220431BB004D2555 /* Main.storyboard */; };
 		F8C3E19C220431BD004D2555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C3E19B220431BD004D2555 /* Assets.xcassets */; };
 		F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C3E19D220431BD004D2555 /* LaunchScreen.storyboard */; };
+		F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,8 @@
 		F810503522100C25001C34BC /* UIButton+ZHEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ZHEx.swift"; sourceTree = "<group>"; };
 		F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeBaseCell.swift; sourceTree = "<group>"; };
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
+		F8A820F822128AA200A780EF /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
+		F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E192220431BB004D2555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C3E194220431BB004D2555 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +57,7 @@
 		F8C3E19B220431BD004D2555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8C3E19E220431BD004D2555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8C3E1A0220431BD004D2555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,8 @@
 			children = (
 				F810503A22101D46001C34BC /* ZHRecommendVC.swift */,
 				F8105037221016BC001C34BC /* View */,
+				F8A820F722128A7200A780EF /* Model */,
+				F8DA5A9D2211265F00BE0BE9 /* API */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -167,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				F810503522100C25001C34BC /* UIButton+ZHEx.swift */,
+				F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -177,6 +186,14 @@
 				F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F8A820F722128A7200A780EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8A820F822128AA200A780EF /* RecommendModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F8C3E186220431BB004D2555 = {
@@ -213,6 +230,14 @@
 				F8C3E1A0220431BD004D2555 /* Info.plist */,
 			);
 			path = ZhiHu;
+			sourceTree = "<group>";
+		};
+		F8DA5A9D2211265F00BE0BE9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		FD05C0795D5512840B39E98C /* Frameworks */ = {
@@ -379,10 +404,13 @@
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
+				F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
 				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,
+				F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */,
 				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
 				F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */,
+				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */,
 				F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */,
 				F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */,
