@@ -11,6 +11,7 @@ import HandyJSON
 
 struct RecommendModel: HandyJSON {
     var common_card:commonCard?
+    var fields:MarketCard?
 }
 
 struct commonCard: HandyJSON {
@@ -28,11 +29,6 @@ struct element: HandyJSON {
     var text:text?
 }
 
-//"color" : "GBK06A",
-//"size" : 14,
-//"max_line" : 1,
-//"panel_text" : "4,744 赞同 · 1,052 评论",
-//"weight" : "NORMAL"
 struct text: HandyJSON {
     var color:String?
     var size:Int=14
@@ -46,6 +42,8 @@ struct Ellipsis_menu: HandyJSON {
 }
 
 struct Feed_content: HandyJSON {
+    var video:RecomVideo?
+    var image:RecomImage?
     var title:title?
     var content:content?
 }
@@ -56,4 +54,41 @@ struct title: HandyJSON {
 
 struct content: HandyJSON {
     var panel_text:String?
+}
+
+struct RecomImage: HandyJSON {
+    var image_url:String?
+}
+
+//视频
+struct RecomVideo: HandyJSON {
+    var id:String?
+    var duration_in_seconds:Int?
+    var thumbnail:RecomThumbnail?
+    var playlist:RecomPlayList?
+}
+
+struct RecomThumbnail: HandyJSON {
+    var image_url:String?
+}
+
+struct RecomPlayList: HandyJSON {
+    var ld:ld?
+}
+
+struct ld:HandyJSON {
+    var url:String?
+    
+}
+
+//大学
+struct MarketCard:HandyJSON {
+    var body:MarketBody?
+}
+
+struct MarketBody:HandyJSON {
+    var title:String?
+    var image:String?
+    var url:String?
+    var description:String?
 }

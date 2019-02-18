@@ -14,23 +14,29 @@ import HandyJSON
 let ZHRecommendProvider = MoyaProvider<ZHRecommendAPI>()
 
 enum ZHRecommendAPI {
-    case recommendList  //推荐列表
+    case followList(Int)  //关注
+    case recommendList(Int)  //推荐列表
+    case hotList(Int)  //热榜
+    case videoList(Int)  //视频
 }
 
 extension ZHRecommendAPI : TargetType {
     //服务器地址
     public var baseURL: URL {
-        switch self {
-        case .recommendList:
-            return URL(string: "https://api.zhihu.com")!
-        }
+        return URL(string: "https://api.zhihu.com")!
     }
     
     //各个请求的具体路径
     public var path: String {
         switch self {
-        case .recommendList:
+        case .followList(_):
+            return ""
+        case .recommendList(_):
             return "/topstory/recommend"
+        case .hotList(_):
+            return "/topstory/hot-list"
+        case .videoList(_):
+            return ""
         }
     }
     
@@ -43,16 +49,33 @@ extension ZHRecommendAPI : TargetType {
     public var task: Task {
         var parmeters:[String:Any] = [:]
         switch self {
-        case .recommendList:
+        case .followList(let index):
+            parmeters =  [
+                "limit":10,
+                "page_number":index
+            ]
+        case .recommendList(let index):
             parmeters =  [
                 "action_feed":true,
                 "limit":10,
                 "reverse_order":0,
                 "scroll":"up",
-                "start_type":"cold"
+                "start_type":"cold",
+                "page_number":index
             ]
-        return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
+        case .hotList(let index):
+            parmeters =  [
+                "limit":10,
+                "page_number":index,
+                "reverse_order":0
+            ]
+        case .videoList(let index):
+            parmeters =  [
+                "limit":10,
+                "page_number":index
+            ]
         }
+        return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
     
     //是否执行Alamofire验证

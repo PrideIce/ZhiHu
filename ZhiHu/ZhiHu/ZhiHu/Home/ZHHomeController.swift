@@ -30,11 +30,11 @@ class ZHHomeController: ZHViewController {
         style.bottomLineHeight = 2
         
         let titles = ["关注","推荐","热榜","视频"]
-        let viewControllers:[UIViewController] = [ZHRecommendVC(),UIViewController(),UIViewController(),UIViewController()]
+        let viewControllers:[UIViewController] = [UIViewController(),ZHRecommendVC(),ZHHotVC(),UIViewController()]
         for vc in viewControllers{
             self.addChildViewController(vc)
         }
-        let pageView = DNSPageView(frame: CGRect(x: 0, y: statusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - navigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers)
+        let pageView = DNSPageView(frame: CGRect(x: 0, y: statusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - navigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
         view.addSubview(pageView)
     }
     
