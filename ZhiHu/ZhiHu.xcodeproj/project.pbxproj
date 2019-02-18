@@ -36,6 +36,15 @@
 		F8DEECCA22152CD40060DBFB /* HomeRecommendImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DEECC922152CD40060DBFB /* HomeRecommendImageCell.swift */; };
 		F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DEECCB22152D230060DBFB /* HomeRecommendBigImageCell.swift */; };
 		F8DEECCE22152D560060DBFB /* HomeListVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DEECCD22152D560060DBFB /* HomeListVideoCell.swift */; };
+		F8DEECD9221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD0221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle */; };
+		F8DEECDA221AF2EF0060DBFB /* Filters.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD1221AF2EF0060DBFB /* Filters.bundle */; };
+		F8DEECDB221AF2EF0060DBFB /* ZHModuleDB.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD2221AF2EF0060DBFB /* ZHModuleDB.bundle */; };
+		F8DEECDC221AF2EF0060DBFB /* ZHModuleFeedImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD3221AF2EF0060DBFB /* ZHModuleFeedImage.bundle */; };
+		F8DEECDD221AF2EF0060DBFB /* ZHModuleColumnImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD4221AF2EF0060DBFB /* ZHModuleColumnImage.bundle */; };
+		F8DEECDE221AF2EF0060DBFB /* ZMCert.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD5221AF2EF0060DBFB /* ZMCert.bundle */; };
+		F8DEECDF221AF2EF0060DBFB /* ZHModuleQA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD6221AF2EF0060DBFB /* ZHModuleQA.bundle */; };
+		F8DEECE0221AF2EF0060DBFB /* ZHModuleTopicImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD7221AF2EF0060DBFB /* ZHModuleTopicImage.bundle */; };
+		F8DEECE1221AF2EF0060DBFB /* UserGuestCenterBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8DEECD8221AF2EF0060DBFB /* UserGuestCenterBundle.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +81,15 @@
 		F8DEECC922152CD40060DBFB /* HomeRecommendImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendImageCell.swift; sourceTree = "<group>"; };
 		F8DEECCB22152D230060DBFB /* HomeRecommendBigImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecommendBigImageCell.swift; sourceTree = "<group>"; };
 		F8DEECCD22152D560060DBFB /* HomeListVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListVideoCell.swift; sourceTree = "<group>"; };
+		F8DEECD0221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleAppGuideImage.bundle; sourceTree = "<group>"; };
+		F8DEECD1221AF2EF0060DBFB /* Filters.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Filters.bundle; sourceTree = "<group>"; };
+		F8DEECD2221AF2EF0060DBFB /* ZHModuleDB.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleDB.bundle; sourceTree = "<group>"; };
+		F8DEECD3221AF2EF0060DBFB /* ZHModuleFeedImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleFeedImage.bundle; sourceTree = "<group>"; };
+		F8DEECD4221AF2EF0060DBFB /* ZHModuleColumnImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleColumnImage.bundle; sourceTree = "<group>"; };
+		F8DEECD5221AF2EF0060DBFB /* ZMCert.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZMCert.bundle; sourceTree = "<group>"; };
+		F8DEECD6221AF2EF0060DBFB /* ZHModuleQA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleQA.bundle; sourceTree = "<group>"; };
+		F8DEECD7221AF2EF0060DBFB /* ZHModuleTopicImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleTopicImage.bundle; sourceTree = "<group>"; };
+		F8DEECD8221AF2EF0060DBFB /* UserGuestCenterBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UserGuestCenterBundle.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +265,7 @@
 				F8C3E194220431BB004D2555 /* FirstViewController.swift */,
 				F8C3E196220431BB004D2555 /* SecondViewController.swift */,
 				F8C3E198220431BB004D2555 /* Main.storyboard */,
+				F8DEECCF221AF2EF0060DBFB /* Resource */,
 				F8C3E19B220431BD004D2555 /* Assets.xcassets */,
 				F8C3E19D220431BD004D2555 /* LaunchScreen.storyboard */,
 				F8C3E1A0220431BD004D2555 /* Info.plist */,
@@ -283,6 +302,22 @@
 				F8DEECC7221518440060DBFB /* HotListCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F8DEECCF221AF2EF0060DBFB /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F8DEECD0221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle */,
+				F8DEECD1221AF2EF0060DBFB /* Filters.bundle */,
+				F8DEECD2221AF2EF0060DBFB /* ZHModuleDB.bundle */,
+				F8DEECD3221AF2EF0060DBFB /* ZHModuleFeedImage.bundle */,
+				F8DEECD4221AF2EF0060DBFB /* ZHModuleColumnImage.bundle */,
+				F8DEECD5221AF2EF0060DBFB /* ZMCert.bundle */,
+				F8DEECD6221AF2EF0060DBFB /* ZHModuleQA.bundle */,
+				F8DEECD7221AF2EF0060DBFB /* ZHModuleTopicImage.bundle */,
+				F8DEECD8221AF2EF0060DBFB /* UserGuestCenterBundle.bundle */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		FD05C0795D5512840B39E98C /* Frameworks */ = {
@@ -353,10 +388,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DEECDD221AF2EF0060DBFB /* ZHModuleColumnImage.bundle in Resources */,
+				F8DEECD9221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle in Resources */,
+				F8DEECDE221AF2EF0060DBFB /* ZMCert.bundle in Resources */,
+				F8DEECE0221AF2EF0060DBFB /* ZHModuleTopicImage.bundle in Resources */,
+				F8DEECDA221AF2EF0060DBFB /* Filters.bundle in Resources */,
+				F8DEECDB221AF2EF0060DBFB /* ZHModuleDB.bundle in Resources */,
+				F8DEECDF221AF2EF0060DBFB /* ZHModuleQA.bundle in Resources */,
 				F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */,
 				F8105033220FEEC6001C34BC /* ZHHomeSearchVC.xib in Resources */,
 				F8C3E19C220431BD004D2555 /* Assets.xcassets in Resources */,
 				F8C3E19A220431BB004D2555 /* Main.storyboard in Resources */,
+				F8DEECE1221AF2EF0060DBFB /* UserGuestCenterBundle.bundle in Resources */,
+				F8DEECDC221AF2EF0060DBFB /* ZHModuleFeedImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
