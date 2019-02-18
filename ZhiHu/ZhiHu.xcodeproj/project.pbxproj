@@ -29,6 +29,15 @@
 		F8C3E19C220431BD004D2555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C3E19B220431BD004D2555 /* Assets.xcassets */; };
 		F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C3E19D220431BD004D2555 /* LaunchScreen.storyboard */; };
 		F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */; };
+		F8FE0278221AC98300B2B45B /* UserGuestCenterBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE026F221AC98200B2B45B /* UserGuestCenterBundle.bundle */; };
+		F8FE0279221AC98300B2B45B /* Filters.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0270221AC98200B2B45B /* Filters.bundle */; };
+		F8FE027A221AC98300B2B45B /* ZHModuleTopicImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0271221AC98200B2B45B /* ZHModuleTopicImage.bundle */; };
+		F8FE027B221AC98300B2B45B /* ZHModuleFeedImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0272221AC98200B2B45B /* ZHModuleFeedImage.bundle */; };
+		F8FE027C221AC98300B2B45B /* ZHModuleColumnImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0273221AC98200B2B45B /* ZHModuleColumnImage.bundle */; };
+		F8FE027D221AC98300B2B45B /* ZMCert.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0274221AC98300B2B45B /* ZMCert.bundle */; };
+		F8FE027E221AC98300B2B45B /* ZHModuleQA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0275221AC98300B2B45B /* ZHModuleQA.bundle */; };
+		F8FE027F221AC98300B2B45B /* ZHModuleDB.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0276221AC98300B2B45B /* ZHModuleDB.bundle */; };
+		F8FE0280221AC98300B2B45B /* ZHModuleAppGuideImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F8FE0277221AC98300B2B45B /* ZHModuleAppGuideImage.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +67,15 @@
 		F8C3E19E220431BD004D2555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8C3E1A0220431BD004D2555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendAPI.swift; sourceTree = "<group>"; };
+		F8FE026F221AC98200B2B45B /* UserGuestCenterBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UserGuestCenterBundle.bundle; sourceTree = "<group>"; };
+		F8FE0270221AC98200B2B45B /* Filters.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Filters.bundle; sourceTree = "<group>"; };
+		F8FE0271221AC98200B2B45B /* ZHModuleTopicImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleTopicImage.bundle; sourceTree = "<group>"; };
+		F8FE0272221AC98200B2B45B /* ZHModuleFeedImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleFeedImage.bundle; sourceTree = "<group>"; };
+		F8FE0273221AC98200B2B45B /* ZHModuleColumnImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleColumnImage.bundle; sourceTree = "<group>"; };
+		F8FE0274221AC98300B2B45B /* ZMCert.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZMCert.bundle; sourceTree = "<group>"; };
+		F8FE0275221AC98300B2B45B /* ZHModuleQA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleQA.bundle; sourceTree = "<group>"; };
+		F8FE0276221AC98300B2B45B /* ZHModuleDB.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleDB.bundle; sourceTree = "<group>"; };
+		F8FE0277221AC98300B2B45B /* ZHModuleAppGuideImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZHModuleAppGuideImage.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +243,7 @@
 				F8C3E194220431BB004D2555 /* FirstViewController.swift */,
 				F8C3E196220431BB004D2555 /* SecondViewController.swift */,
 				F8C3E198220431BB004D2555 /* Main.storyboard */,
+				F8FE026E221AC94700B2B45B /* Resource */,
 				F8C3E19B220431BD004D2555 /* Assets.xcassets */,
 				F8C3E19D220431BD004D2555 /* LaunchScreen.storyboard */,
 				F8C3E1A0220431BD004D2555 /* Info.plist */,
@@ -238,6 +257,22 @@
 				F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		F8FE026E221AC94700B2B45B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F8FE0270221AC98200B2B45B /* Filters.bundle */,
+				F8FE026F221AC98200B2B45B /* UserGuestCenterBundle.bundle */,
+				F8FE0277221AC98300B2B45B /* ZHModuleAppGuideImage.bundle */,
+				F8FE0273221AC98200B2B45B /* ZHModuleColumnImage.bundle */,
+				F8FE0276221AC98300B2B45B /* ZHModuleDB.bundle */,
+				F8FE0272221AC98200B2B45B /* ZHModuleFeedImage.bundle */,
+				F8FE0275221AC98300B2B45B /* ZHModuleQA.bundle */,
+				F8FE0271221AC98200B2B45B /* ZHModuleTopicImage.bundle */,
+				F8FE0274221AC98300B2B45B /* ZMCert.bundle */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		FD05C0795D5512840B39E98C /* Frameworks */ = {
@@ -308,10 +343,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FE027C221AC98300B2B45B /* ZHModuleColumnImage.bundle in Resources */,
 				F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */,
+				F8FE0280221AC98300B2B45B /* ZHModuleAppGuideImage.bundle in Resources */,
+				F8FE027D221AC98300B2B45B /* ZMCert.bundle in Resources */,
+				F8FE0279221AC98300B2B45B /* Filters.bundle in Resources */,
+				F8FE0278221AC98300B2B45B /* UserGuestCenterBundle.bundle in Resources */,
+				F8FE027E221AC98300B2B45B /* ZHModuleQA.bundle in Resources */,
+				F8FE027A221AC98300B2B45B /* ZHModuleTopicImage.bundle in Resources */,
+				F8FE027F221AC98300B2B45B /* ZHModuleDB.bundle in Resources */,
 				F8105033220FEEC6001C34BC /* ZHHomeSearchVC.xib in Resources */,
 				F8C3E19C220431BD004D2555 /* Assets.xcassets in Resources */,
 				F8C3E19A220431BB004D2555 /* Main.storyboard in Resources */,
+				F8FE027B221AC98300B2B45B /* ZHModuleFeedImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,15 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ZhiHu-checkManifestLockResult.txt",
 			);
@@ -344,8 +384,6 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu-frameworks.sh",
@@ -367,8 +405,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DNSPageView.framework",
