@@ -412,15 +412,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ZhiHu-checkManifestLockResult.txt",
 			);
@@ -433,8 +429,6 @@
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu-frameworks.sh",
@@ -456,8 +450,6 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DNSPageView.framework",
@@ -488,30 +480,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DEECBD2213DED00060DBFB /* UIScrollView+Ex.swift in Sources */,
+				F8DEECC62215114E0060DBFB /* HotListModel.swift in Sources */,
+				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
+				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
-				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
-				F8DEECC62215114E0060DBFB /* HotListModel.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
 				F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
 				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,
-				F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */,
-				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
 				F8DEECCE22152D560060DBFB /* HomeListVideoCell.swift in Sources */,
 				F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */,
-				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */,
 				F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */,
 				F8105027220EF942001C34BC /* ZHMineViewController.swift in Sources */,
 				F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */,
 				F8DEECCA22152CD40060DBFB /* HomeRecommendImageCell.swift in Sources */,
-				F810502F220EFD27001C34BC /* Const.swift in Sources */,
 				F8DEECC8221518440060DBFB /* HotListCell.swift in Sources */,
+				F8DEECBD2213DED00060DBFB /* UIScrollView+Ex.swift in Sources */,
+				F810502F220EFD27001C34BC /* Const.swift in Sources */,
+				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
+				F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

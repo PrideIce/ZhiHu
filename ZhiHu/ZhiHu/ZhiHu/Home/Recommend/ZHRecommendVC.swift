@@ -121,6 +121,10 @@ extension ZHRecommendVC : UITableViewDelegate,UITableViewDataSource {
                 cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
                 let url = URL.init(string: (content.image?.image_url)!)
                 cell.zhImageView.kf.setImage(with: url)
+                let reasonType = model?.uninterest_reasons?.last?.reason_type
+                if reasonType == "creator" {
+                    cell.token = model?.uninterest_reasons?.last?.object_token
+                }
                 return cell
             } else if content.video != nil {
                 let cell = tableView.dequeueReusableCell(withIdentifier: HomeListVideoCellID, for: indexPath) as! HomeListVideoCell
@@ -128,12 +132,20 @@ extension ZHRecommendVC : UITableViewDelegate,UITableViewDataSource {
                 cell.titleLabel.text = "Video: " + title!
                 cell.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
                 cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
+                let reasonType = model?.uninterest_reasons?.last?.reason_type
+                if reasonType == "creator" {
+                    cell.token = model?.uninterest_reasons?.last?.object_token
+                }
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ZHHomeBaseCellID, for: indexPath) as! ZHHomeBaseCell
                 cell.titleLabel.text = model?.common_card?.feed_content?.title?.panel_text
                 cell.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
                 cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
+                let reasonType = model?.uninterest_reasons?.last?.reason_type
+                if reasonType == "creator" {
+                    cell.token = model?.uninterest_reasons?.last?.object_token
+                }
                 return cell
             }
         } else {

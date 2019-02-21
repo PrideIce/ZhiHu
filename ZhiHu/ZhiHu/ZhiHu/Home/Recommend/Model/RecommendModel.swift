@@ -12,6 +12,7 @@ import HandyJSON
 struct RecommendModel: HandyJSON {
     var common_card:commonCard?
     var fields:MarketCard?
+    var uninterest_reasons:[RecomUninterestReason]?
 }
 
 struct commonCard: HandyJSON {
@@ -22,14 +23,14 @@ struct commonCard: HandyJSON {
 }
 
 struct FootLine: HandyJSON {
-    var elements:[element]?
+    var elements:[RecomElement]?
 }
 
-struct element: HandyJSON {
-    var text:text?
+struct RecomElement: HandyJSON {
+    var text:RecomText?
 }
 
-struct text: HandyJSON {
+struct RecomText: HandyJSON {
     var color:String?
     var size:Int=14
     var max_line:Int=1
@@ -40,24 +41,50 @@ struct text: HandyJSON {
 struct Ellipsis_menu: HandyJSON {
     
 }
-
+//内容
 struct Feed_content: HandyJSON {
     var video:RecomVideo?
     var image:RecomImage?
-    var title:title?
-    var content:content?
+    var title:Recom_title?
+    var content:RecomContent?
 }
 
-struct title: HandyJSON {
+struct Recom_title: HandyJSON {
     var panel_text:String?
 }
 
-struct content: HandyJSON {
+struct RecomContent: HandyJSON {
     var panel_text:String?
 }
 
 struct RecomImage: HandyJSON {
     var image_url:String?
+}
+
+//人员
+struct RecomUninterestReason: HandyJSON {
+    var object_token:String?
+    var reason_type:String?
+}
+
+//    "id": "607be47c268359c0205067da833d571b",
+//    "url_token": "ruan-mei-fan-zi",
+//    "name": "软妹贩子",
+//    "avatar_url": "https://pic2.zhimg.com/v2-643dedf1d18eef513e0f52f187f6db3d_is.jpg",
+//    "avatar_url_template": "https://pic2.zhimg.com/v2-643dedf1d18eef513e0f52f187f6db3d_{size}.jpg",
+//    "is_org": false,
+//    "type": "people",
+//    "url": "https://www.zhihu.com/people/ruan-mei-fan-zi",
+//    "user_type": "people",
+//    "headline": "国企民工 上八休八",
+//    "gender": -1,
+struct ZHMember: HandyJSON {
+    var id:String?
+    var url_token:String?
+    var name:String?
+    var avatar_url:String?
+    var headline:String?
+    var gender:Int?
 }
 
 //视频
@@ -73,10 +100,10 @@ struct RecomThumbnail: HandyJSON {
 }
 
 struct RecomPlayList: HandyJSON {
-    var ld:ld?
+    var ld:Recomld?
 }
 
-struct ld:HandyJSON {
+struct Recomld:HandyJSON {
     var url:String?
     
 }

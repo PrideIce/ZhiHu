@@ -18,12 +18,18 @@ enum ZHRecommendAPI {
     case recommendList(Int)  //推荐列表
     case hotList(Int)  //热榜
     case videoList(Int)  //视频
+    case memberProfile(String)  //获取个人信息
 }
 
 extension ZHRecommendAPI : TargetType {
     //服务器地址
     public var baseURL: URL {
-        return URL(string: "https://api.zhihu.com")!
+        switch self {
+        case .memberProfile:
+            return URL(string: "https://www.zhihu.com")!
+        default:
+            return URL(string: "https://api.zhihu.com")!
+        }
     }
     
     //各个请求的具体路径
@@ -37,6 +43,8 @@ extension ZHRecommendAPI : TargetType {
             return "/topstory/hot-list"
         case .videoList(_):
             return ""
+        case .memberProfile(let token):
+            return "/api/v4/members/" + token
         }
     }
     
@@ -74,6 +82,8 @@ extension ZHRecommendAPI : TargetType {
                 "limit":10,
                 "page_number":index
             ]
+        default:
+            parmeters = [:]
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
