@@ -18,19 +18,6 @@ class HomeRecommendBigImageCell: ZHHomeBaseCell {
         imageView.layer.cornerRadius = 5
         return imageView
     }()
-    
-    override var model: RecommendModel? {
-        didSet {
-            let market = (model?.fields ?? MarketCard())!
-            self.titleLabel.text = market.body?.title ?? ""
-            self.contentLabel.text = market.body?.description
-            self.footerLabel.text = "立即参与"
-            self.headImgView.kf.setImage(with: URL(string: (market.header?.image)!))
-            self.nameLabel.text = market.header?.text
-            let url = URL.init(string: (market.body?.image)!)
-            self.zhImageView.kf.setImage(with: url)
-        }
-    }
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,5 +41,17 @@ class HomeRecommendBigImageCell: ZHHomeBaseCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
+    override var model: RecommendModel? {
+        didSet {
+            let market = (model?.fields ?? MarketCard())!
+            self.titleLabel.text = market.body?.title ?? ""
+            self.contentLabel.text = market.body?.description
+            self.footerLabel.text = "立即参与"
+            self.headImgView.kf.setImage(with: URL(string: (market.header?.image)!))
+            self.nameLabel.text = market.header?.text
+            let url = URL.init(string: (market.body?.image)!)
+            self.zhImageView.kf.setImage(with: url)
+        }
+    }
 }

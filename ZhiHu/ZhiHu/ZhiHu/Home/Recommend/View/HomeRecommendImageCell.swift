@@ -19,18 +19,6 @@ class HomeRecommendImageCell: ZHHomeBaseCell {
         return imageView
     }()
     
-    override var model: RecommendModel? {
-        didSet {
-            let content = (model?.common_card?.feed_content ?? Feed_content())!
-            let url = URL.init(string: (content.image?.image_url)!)
-            print("head:" + (content.image?.image_url)!)
-            if (content.image?.image_url)! == "" {
-                print("空")
-            }
-            self.zhImageView.kf.setImage(with: url)
-        }
-    }
-    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentLabel.snp.makeConstraints { (make) in
@@ -52,5 +40,17 @@ class HomeRecommendImageCell: ZHHomeBaseCell {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override var model: RecommendModel? {
+        didSet {
+            let content = (model?.common_card?.feed_content ?? Feed_content())!
+            let url = URL.init(string: (content.image?.image_url)!)
+            print("head:" + (content.image?.image_url)!)
+            if (content.image?.image_url)! == "" {
+                print("空")
+            }
+            self.zhImageView.kf.setImage(with: url)
+        }
     }
 }

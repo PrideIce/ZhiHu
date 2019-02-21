@@ -18,11 +18,12 @@ class ZHHotVC: ZHViewController {
     var pageIndex:Int = 0
     
     lazy var tableView : UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView.init(frame: .zero, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(HotListCell.self, forCellReuseIdentifier: "cell")
         tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        tableView.tableHeaderView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: CGFloat.leastNormalMagnitude))
         return tableView
     }()
     
@@ -43,14 +44,12 @@ class ZHHotVC: ZHViewController {
             self?.refreshDataSource()
         }
         tableView.mj_header.beginRefreshing()
-        tableView.isHidden = true
     }
     
     func refreshDataSource() {
         //首页接口请求
         ZHRecommendProvider.request(.hotList(self.pageIndex)) { result in
             if case let .success(response) = result {
-                self.tableView.isHidden = false
                 self.tableView.mj_header.endRefreshing()
                 self.tableView.mj_footer.endRefreshing()
                 //解析数据

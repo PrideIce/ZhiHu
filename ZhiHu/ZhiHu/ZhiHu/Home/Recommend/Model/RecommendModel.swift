@@ -10,61 +10,61 @@ import Foundation
 import HandyJSON
 
 struct RecommendModel: HandyJSON {
-    var common_card:commonCard?
-    var fields:MarketCard?
-    var uninterest_reasons:[RecomUninterestReason]?
+    var common_card: CommonCard?
+    var fields: MarketCard?
+    var uninterest_reasons: [RecomUninterestReason]?
 }
 
-struct commonCard: HandyJSON {
-    var style:String?
-    var footline:FootLine?
-    var ellipsis_menu:Ellipsis_menu?
-    var feed_content:Feed_content?
+struct CommonCard: HandyJSON {
+    var style: String?
+    var footline: FootLine?
+    var ellipsis_menu: Ellipsis_menu?
+    var feed_content: Feed_content?
 }
 
 struct FootLine: HandyJSON {
-    var elements:[RecomElement]?
+    var elements: [RecomElement]?
 }
 
 struct RecomElement: HandyJSON {
-    var text:RecomText?
+    var text: RecomText?
 }
 
 struct RecomText: HandyJSON {
-    var color:String?
-    var size:Int=14
-    var max_line:Int=1
-    var panel_text:String?
-    var weight:String?
+    var color: String?
+    var size: Int = 14
+    var max_line: Int = 1
+    var panel_text: String?
+    var weight: String?
 }
 
 struct Ellipsis_menu: HandyJSON {
-    
 }
-//内容
+
+// 内容
 struct Feed_content: HandyJSON {
-    var video:RecomVideo?
-    var image:RecomImage?
-    var title:Recom_title?
-    var content:RecomContent?
+    var video: RecomVideo?
+    var image: RecomImage?
+    var title: Recom_title?
+    var content: RecomContent?
 }
 
 struct Recom_title: HandyJSON {
-    var panel_text:String?
+    var panel_text: String?
 }
 
 struct RecomContent: HandyJSON {
-    var panel_text:String?
+    var panel_text: String?
 }
 
 struct RecomImage: HandyJSON {
-    var image_url:String?
+    var image_url: String?
 }
 
-//人员
+// 人员
 struct RecomUninterestReason: HandyJSON {
-    var object_token:String?
-    var reason_type:String?
+    var object_token: String?
+    var reason_type: String?
 }
 
 //    "id": "607be47c268359c0205067da833d571b",
@@ -79,50 +79,49 @@ struct RecomUninterestReason: HandyJSON {
 //    "headline": "国企民工 上八休八",
 //    "gender": -1,
 struct ZHMember: HandyJSON {
-    var id:String?
-    var url_token:String?
-    var name:String?
-    var avatar_url:String?
-    var headline:String?
-    var gender:Int?
+    var id: String?
+    var url_token: String?
+    var name: String?
+    var avatar_url: String?
+    var headline: String?
+    var gender: Int?
 }
 
-//视频
+// 视频
 struct RecomVideo: HandyJSON {
-    var id:String?
-    var duration_in_seconds:Int?
-    var thumbnail:RecomThumbnail?
-    var playlist:RecomPlayList?
+    var id: String?
+    var duration_in_seconds: Int?
+    var thumbnail: RecomThumbnail?
+    var playlist: RecomPlayList?
 }
 
 struct RecomThumbnail: HandyJSON {
-    var image_url:String?
+    var image_url: String?
 }
 
 struct RecomPlayList: HandyJSON {
-    var ld:Recomld?
+    var ld: Recomld?
 }
 
-struct Recomld:HandyJSON {
-    var url:String?
-    
+struct Recomld: HandyJSON {
+    var url: String?
 }
 
-//大学
-struct MarketCard:HandyJSON {
-    var body:MarketBody?
-    var header:MarketHeader?
+// 大学
+struct MarketCard: HandyJSON {
+    var body: MarketBody?
+    var header: MarketHeader?
 }
 
-struct MarketBody:HandyJSON {
-    var title:String?
-    var image:String?
-    var url:String?
-    var description:String?
+struct MarketBody: HandyJSON {
+    var title: String?
+    var image: String?
+    var url: String?
+    var description: String?
 }
 
-struct MarketHeader:HandyJSON {
-    var text:String?
-    var image:String?
-    var url:String?
+struct MarketHeader: HandyJSON {
+    var text: String?
+    var image: String?
+    var url: String?
 }
