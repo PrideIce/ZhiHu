@@ -29,6 +29,7 @@ class HotListCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = 5
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -54,7 +55,7 @@ class HotListCell: UITableViewCell {
             make.centerY.equalTo(contentView)
             make.right.equalTo(contentView).offset(-10)
             make.width.equalTo(100)
-            make.height.equalTo(70)
+            make.height.equalTo(65)
         }
     }
     
