@@ -130,4 +130,16 @@ extension ZHRecommendVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = recommendModelList?[indexPath.section]
+        if model?.common_card != nil {
+            guard let answerUrl = model?.common_card?.feed_content?.title?.action?.intent_url else {
+                return
+            }
+            let vc = AnswerDetailVC()
+            vc.answerUrl = answerUrl
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

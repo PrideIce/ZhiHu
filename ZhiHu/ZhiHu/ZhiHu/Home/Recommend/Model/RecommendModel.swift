@@ -51,6 +51,7 @@ struct Feed_content: HandyJSON {
 
 struct Recom_title: HandyJSON {
     var panel_text: String?
+    var action: RecomAction?
 }
 
 struct RecomContent: HandyJSON {
@@ -59,6 +60,10 @@ struct RecomContent: HandyJSON {
 
 struct RecomImage: HandyJSON {
     var image_url: String?
+}
+
+struct RecomAction: HandyJSON {
+    var intent_url: String?
 }
 
 // 人员

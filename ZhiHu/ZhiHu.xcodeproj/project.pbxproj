@@ -20,6 +20,8 @@
 		F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503522100C25001C34BC /* UIButton+ZHEx.swift */; };
 		F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */; };
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
+		F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A4221E970B00908F2A /* AnswerDetailVC.swift */; };
+		F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A8221E99A500908F2A /* AnswerAPI.swift */; };
 		F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820F822128AA200A780EF /* RecommendModel.swift */; };
 		F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
@@ -63,6 +65,8 @@
 		F810503522100C25001C34BC /* UIButton+ZHEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ZHEx.swift"; sourceTree = "<group>"; };
 		F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeBaseCell.swift; sourceTree = "<group>"; };
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
+		F86300A4221E970B00908F2A /* AnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailVC.swift; sourceTree = "<group>"; };
+		F86300A8221E99A500908F2A /* AnswerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		F8A820F822128AA200A780EF /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +140,7 @@
 				F810502B220EFC3E001C34BC /* Recommend */,
 				F810502C220EFC42001C34BC /* Hot */,
 				F810502D220EFC46001C34BC /* Video */,
+				F86300A3221E968900908F2A /* Question */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -226,6 +231,15 @@
 				F8DEECCD22152D560060DBFB /* HomeListVideoCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F86300A3221E968900908F2A /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				F86300A4221E970B00908F2A /* AnswerDetailVC.swift */,
+				F86300A8221E99A500908F2A /* AnswerAPI.swift */,
+			);
+			path = Question;
 			sourceTree = "<group>";
 		};
 		F8A820F722128A7200A780EF /* Model */ = {
@@ -481,12 +495,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DEECC62215114E0060DBFB /* HotListModel.swift in Sources */,
+				F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */,
 				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
 				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
+				F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
 				F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */,
