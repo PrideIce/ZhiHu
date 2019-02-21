@@ -111,6 +111,7 @@ struct Recomld:HandyJSON {
 //大学
 struct MarketCard:HandyJSON {
     var body:MarketBody?
+    var header:MarketHeader?
 }
 
 struct MarketBody:HandyJSON {
@@ -118,4 +119,10 @@ struct MarketBody:HandyJSON {
     var image:String?
     var url:String?
     var description:String?
+}
+
+struct MarketHeader:HandyJSON {
+    var text:String?
+    var image:String?
+    var url:String?
 }

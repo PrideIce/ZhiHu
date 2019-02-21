@@ -113,47 +113,21 @@ extension ZHRecommendVC : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = self.recommendModelList?[indexPath.section]
         if model?.common_card != nil {
+            let cell:ZHHomeBaseCell
             let content = (model?.common_card?.feed_content ?? Feed_content())!
             if content.image != nil {
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendImageCellID, for: indexPath) as! HomeRecommendImageCell
-                cell.titleLabel.text = model?.common_card?.feed_content?.title?.panel_text
-                cell.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
-                cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
-                let url = URL.init(string: (content.image?.image_url)!)
-                cell.zhImageView.kf.setImage(with: url)
-                let reasonType = model?.uninterest_reasons?.last?.reason_type
-                if reasonType == "creator" {
-                    cell.token = model?.uninterest_reasons?.last?.object_token
-                }
-                return cell
+                cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendImageCellID, for: indexPath) as! HomeRecommendImageCell
             } else if content.video != nil {
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeListVideoCellID, for: indexPath) as! HomeListVideoCell
-                let title = model?.common_card?.feed_content?.title?.panel_text
-                cell.titleLabel.text = "Video: " + title!
-                cell.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
-                cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
-                let reasonType = model?.uninterest_reasons?.last?.reason_type
-                if reasonType == "creator" {
-                    cell.token = model?.uninterest_reasons?.last?.object_token
-                }
-                return cell
+                cell = tableView.dequeueReusableCell(withIdentifier: HomeListVideoCellID, for: indexPath) as! HomeListVideoCell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: ZHHomeBaseCellID, for: indexPath) as! ZHHomeBaseCell
-                cell.titleLabel.text = model?.common_card?.feed_content?.title?.panel_text
-                cell.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
-                cell.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
-                let reasonType = model?.uninterest_reasons?.last?.reason_type
-                if reasonType == "creator" {
-                    cell.token = model?.uninterest_reasons?.last?.object_token
-                }
-                return cell
+                cell = tableView.dequeueReusableCell(withIdentifier: ZHHomeBaseCellID, for: indexPath) as! ZHHomeBaseCell
             }
+            cell.model = model
+            return cell
+            
         } else {
-            let market = (model?.fields ?? MarketCard())!
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomeListVideoCellID, for: indexPath) as! HomeListVideoCell
-            cell.titleLabel.text = "Market: " + (market.body?.title ?? "")!
-            cell.contentLabel.text = market.body?.description
-            cell.footerLabel.text = "立即参与"
+            let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecommendBigImageCellID, for: indexPath) as! HomeRecommendBigImageCell
+            cell.model = model
             return cell
 
         }

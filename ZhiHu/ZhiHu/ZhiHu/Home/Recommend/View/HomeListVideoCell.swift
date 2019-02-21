@@ -9,6 +9,13 @@
 import UIKit
 
 class HomeListVideoCell: ZHHomeBaseCell {
+    
+    override var model: RecommendModel? {
+        didSet {
+            let title = model?.common_card?.feed_content?.title?.panel_text
+            self.titleLabel.text = "Video: " + title!
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

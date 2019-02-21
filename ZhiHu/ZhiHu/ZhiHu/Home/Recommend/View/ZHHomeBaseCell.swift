@@ -13,6 +13,22 @@ import Moya
 
 class ZHHomeBaseCell: UITableViewCell {
     
+    var model : RecommendModel? {
+        didSet {
+            self.titleLabel.text = model?.common_card?.feed_content?.title?.panel_text
+            self.contentLabel.text = model?.common_card?.feed_content?.content?.panel_text
+            self.footerLabel.text = model?.common_card?.footline?.elements?[0].text?.panel_text
+            
+            let reasonType = model?.uninterest_reasons?.last?.reason_type
+            if reasonType == "creator" {
+                self.token = model?.uninterest_reasons?.last?.object_token
+            } else {
+                self.nameLabel.text = "匿名用户"
+                self.headImgView.image = UIImage(named: "UserGuestCenterBundle.bundle/Avatar_Liukanshan_Normal")
+            }
+        }
+    }
+    
     var token : String? {
         didSet {
             //头像等信息请求

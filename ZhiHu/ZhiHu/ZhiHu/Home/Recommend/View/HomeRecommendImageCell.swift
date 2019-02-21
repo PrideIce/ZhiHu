@@ -18,10 +18,21 @@ class HomeRecommendImageCell: ZHHomeBaseCell {
         imageView.layer.cornerRadius = 5
         return imageView
     }()
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    override var model: RecommendModel? {
+        didSet {
+            let content = (model?.common_card?.feed_content ?? Feed_content())!
+            let url = URL.init(string: (content.image?.image_url)!)
+            print("head:" + (content.image?.image_url)!)
+            if (content.image?.image_url)! == "" {
+                print("空")
+            }
+            self.zhImageView.kf.setImage(with: url)
+        }
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentLabel.snp.makeConstraints { (make) in
             make.right.equalToSuperview().offset(-120)
         }
@@ -33,6 +44,13 @@ class HomeRecommendImageCell: ZHHomeBaseCell {
             make.width.equalTo(100)
             make.height.equalTo(70)
         }
+        
+//        profileLabel.snp.makeConstraints { (make) in
+//            make.right.equalTo(zhImageView.snp.left).offset(-10)
+//        }
     }
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 }
