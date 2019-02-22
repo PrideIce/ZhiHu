@@ -23,6 +23,9 @@
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
 		F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A4221E970B00908F2A /* AnswerDetailVC.swift */; };
 		F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A8221E99A500908F2A /* AnswerAPI.swift */; };
+		F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AB221FC8A600908F2A /* AnswerModel.swift */; };
+		F86300AF221FCBC900908F2A /* ZHAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */; };
+		F86300B0221FCBC900908F2A /* ZHAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F86300AE221FCBC900908F2A /* ZHAnswerCell.xib */; };
 		F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820F822128AA200A780EF /* RecommendModel.swift */; };
 		F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
@@ -69,6 +72,9 @@
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
 		F86300A4221E970B00908F2A /* AnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailVC.swift; sourceTree = "<group>"; };
 		F86300A8221E99A500908F2A /* AnswerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
+		F86300AB221FC8A600908F2A /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHAnswerCell.swift; sourceTree = "<group>"; };
+		F86300AE221FCBC900908F2A /* ZHAnswerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZHAnswerCell.xib; sourceTree = "<group>"; };
 		F8A820F822128AA200A780EF /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				F807DD3C221EE21E005C9C9A /* QuestionHeaderView.swift */,
+				F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */,
+				F86300AE221FCBC900908F2A /* ZHAnswerCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,11 +254,20 @@
 		F86300A3221E968900908F2A /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				F86300AA221FC87F00908F2A /* Model */,
 				F807DD3B221EE1F8005C9C9A /* View */,
 				F86300A4221E970B00908F2A /* AnswerDetailVC.swift */,
 				F86300A8221E99A500908F2A /* AnswerAPI.swift */,
 			);
 			path = Question;
+			sourceTree = "<group>";
+		};
+		F86300AA221FC87F00908F2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F86300AB221FC8A600908F2A /* AnswerModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F8A820F722128A7200A780EF /* Model */ = {
@@ -426,6 +443,7 @@
 				F8C3E19A220431BB004D2555 /* Main.storyboard in Resources */,
 				F8DEECE1221AF2EF0060DBFB /* UserGuestCenterBundle.bundle in Resources */,
 				F8DEECDC221AF2EF0060DBFB /* ZHModuleFeedImage.bundle in Resources */,
+				F86300B0221FCBC900908F2A /* ZHAnswerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,12 +532,14 @@
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
 				F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */,
+				F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
 				F807DD3D221EE21E005C9C9A /* QuestionHeaderView.swift in Sources */,
 				F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
 				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,
+				F86300AF221FCBC900908F2A /* ZHAnswerCell.swift in Sources */,
 				F8DEECCE22152D560060DBFB /* HomeListVideoCell.swift in Sources */,
 				F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */,
 				F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */,

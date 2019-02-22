@@ -139,6 +139,7 @@ extension ZHRecommendVC: UITableViewDelegate, UITableViewDataSource {
             }
             let vc = AnswerDetailVC()
             vc.answerUrl = answerUrl
+            vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

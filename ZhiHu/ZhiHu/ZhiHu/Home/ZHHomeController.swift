@@ -36,6 +36,12 @@ class ZHHomeController: ZHViewController {
         let pageView = DNSPageView(frame: CGRect(x: 0, y: StatusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - NavigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
         view.addSubview(pageView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 
     func initSearchBar() {
         let textField = UITextField.init(frame: CGRect(x: 15, y: StatusBarHeight + 10, width: ScreenWidth - 100, height: barHeight))

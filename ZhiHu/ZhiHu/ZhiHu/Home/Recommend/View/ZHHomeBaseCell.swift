@@ -156,8 +156,8 @@ class ZHHomeBaseCell: UITableViewCell {
                     if let member = JSONDeserializer<ZHMember>.deserializeFrom(json: json.description) { // 从字符串转换为对象实例
                         self.nameLabel.text = member.name
                         self.profileLabel.text = member.headline!
-                        let url = URL(string: member.avatar_url!)
-                        self.headImgView.kf.setImage(with: url)
+                        let url = URL(string: "member.avatar_url!")
+                        self.headImgView.kf.setImage(with: url, placeholder: UIImage(named: "UserGuestCenterBundle.bundle/Avatar_Liukanshan_Normal"))
                     }
                 }
             }

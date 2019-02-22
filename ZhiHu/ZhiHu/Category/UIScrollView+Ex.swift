@@ -15,7 +15,6 @@ extension UIScrollView {
         header.lastUpdatedTimeLabel.isHidden = true
         header.stateLabel.isHidden = true
         self.mj_header = header
-        self.mj_header.beginRefreshing()
         
         let footer = MJRefreshBackNormalFooter()
         footer.stateLabel.isHidden = true

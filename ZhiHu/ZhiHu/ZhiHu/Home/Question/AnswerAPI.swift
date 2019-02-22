@@ -22,7 +22,8 @@ extension AnswerAPI : TargetType {
     public var baseURL: URL {
         switch self {
         case .detail(_):
-            return URL(string: "https://api.zhihu.com/v4/answers/526699237/question")!
+            return URL(string: "https://www.zhihu.com/appview/v2/answer/604306844")!
+//            return URL(string: "https://api.zhihu.com/answers/604306844/")!
         }
     }
     
