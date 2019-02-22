@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32E1331CAFF69202B8C30B68 /* Pods_ZhiHu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D67B0B5ECC66AC6F4C5EAC /* Pods_ZhiHu.framework */; };
+		F807DD3D221EE21E005C9C9A /* QuestionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807DD3C221EE21E005C9C9A /* QuestionHeaderView.swift */; };
 		F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810501E220EC83C001C34BC /* ZHHomeController.swift */; };
 		F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105020220EF917001C34BC /* ZHIdeaController.swift */; };
 		F8105023220EF92E001C34BC /* ZHCollegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105022220EF92E001C34BC /* ZHCollegeViewController.swift */; };
@@ -53,6 +54,7 @@
 		13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.release.xcconfig"; sourceTree = "<group>"; };
 		20F7382599C405E07E0EC563 /* Pods-ZhiHu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhiHu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhiHu/Pods-ZhiHu.debug.xcconfig"; sourceTree = "<group>"; };
 		27D67B0B5ECC66AC6F4C5EAC /* Pods_ZhiHu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZhiHu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F807DD3C221EE21E005C9C9A /* QuestionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHeaderView.swift; sourceTree = "<group>"; };
 		F810501E220EC83C001C34BC /* ZHHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeController.swift; sourceTree = "<group>"; };
 		F8105020220EF917001C34BC /* ZHIdeaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHIdeaController.swift; sourceTree = "<group>"; };
 		F8105022220EF92E001C34BC /* ZHCollegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHCollegeViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 				13270FB2F86403A88FA6BFCA /* Pods-ZhiHu.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F807DD3B221EE1F8005C9C9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F807DD3C221EE21E005C9C9A /* QuestionHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F8105018220EC77E001C34BC /* ZhiHu */ = {
@@ -236,6 +246,7 @@
 		F86300A3221E968900908F2A /* Question */ = {
 			isa = PBXGroup;
 			children = (
+				F807DD3B221EE1F8005C9C9A /* View */,
 				F86300A4221E970B00908F2A /* AnswerDetailVC.swift */,
 				F86300A8221E99A500908F2A /* AnswerAPI.swift */,
 			);
@@ -505,6 +516,7 @@
 				F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */,
 				F8105021220EF917001C34BC /* ZHIdeaController.swift in Sources */,
 				F8105032220FEEC6001C34BC /* ZHHomeSearchVC.swift in Sources */,
+				F807DD3D221EE21E005C9C9A /* QuestionHeaderView.swift in Sources */,
 				F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */,
 				F8C3E197220431BB004D2555 /* SecondViewController.swift in Sources */,
 				F8105025220EF938001C34BC /* ZHMessageViewController.swift in Sources */,

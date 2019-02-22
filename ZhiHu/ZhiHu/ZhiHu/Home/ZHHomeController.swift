@@ -33,12 +33,12 @@ class ZHHomeController: ZHViewController {
         for vc in viewControllers {
             addChildViewController(vc)
         }
-        let pageView = DNSPageView(frame: CGRect(x: 0, y: statusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - navigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
+        let pageView = DNSPageView(frame: CGRect(x: 0, y: StatusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - NavigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
         view.addSubview(pageView)
     }
 
     func initSearchBar() {
-        let textField = UITextField.init(frame: CGRect(x: 15, y: statusBarHeight + 10, width: ScreenWidth - 100, height: barHeight))
+        let textField = UITextField.init(frame: CGRect(x: 15, y: StatusBarHeight + 10, width: ScreenWidth - 100, height: barHeight))
         
         textField.placeholder = "超一亿人朋友圈仅3天可见"
         textField.layer.masksToBounds = true
@@ -49,7 +49,7 @@ class ZHHomeController: ZHViewController {
         view.addSubview(textField)
         
         let questionBtn = UIButton.init(type: UIButtonType.system)
-        questionBtn.frame = CGRect(x: ScreenWidth - 85, y: statusBarHeight + 10, width: 80, height: barHeight)
+        questionBtn.frame = CGRect(x: ScreenWidth - 85, y: StatusBarHeight + 10, width: 80, height: barHeight)
         questionBtn.setTitle("提问", for: UIControlState.normal)
         questionBtn.setImage(UIImage(named: "ZHModuleColumnImage.bundle/Night_ZHAPP_Ask_Post"), for: UIControlState.normal)
         questionBtn.blueTheme()

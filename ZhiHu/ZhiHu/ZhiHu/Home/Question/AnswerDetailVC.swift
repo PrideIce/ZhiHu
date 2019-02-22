@@ -21,6 +21,9 @@ class AnswerDetailVC: ZHViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        view.addSubview(QuestionHeaderView.init(frame: CGRect.init(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: 150)))
 
         AnswerProvider.request(.detail(self.answerUrl!)) { result in
             if case let .success(response) = result {
