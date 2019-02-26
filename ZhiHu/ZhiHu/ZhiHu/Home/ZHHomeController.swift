@@ -33,7 +33,7 @@ class ZHHomeController: ZHViewController {
         for vc in viewControllers {
             addChildViewController(vc)
         }
-        let pageView = DNSPageView(frame: CGRect(x: 0, y: StatusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeigth - NavigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
+        let pageView = DNSPageView(frame: CGRect(x: 0, y: StatusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
         view.addSubview(pageView)
     }
     

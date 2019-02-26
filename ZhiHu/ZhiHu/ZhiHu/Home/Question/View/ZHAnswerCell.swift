@@ -7,18 +7,27 @@
 //
 
 import UIKit
+import WebKit
 
 class ZHAnswerCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var webView: WKWebView = {
+        let webView = WKWebView()
+        webView.scrollView.isScrollEnabled = false
+        return webView
+    }()
+
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
+        contentView.addSubview(webView)
+        webView.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalToSuperview()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
 }

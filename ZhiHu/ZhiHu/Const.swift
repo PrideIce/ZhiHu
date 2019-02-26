@@ -32,8 +32,9 @@ func isIPhoneXSeries() -> Bool {
 let StatusBarHeight : CGFloat = isIPhoneXSeries() ? 44 : 20
 let NavigationBarHeight : CGFloat = isIPhoneXSeries() ? 88 : 64
 let TabBarHeight : CGFloat = isIPhoneXSeries() ? 49 + 34 : 49
+let SafeBottomHeight : CGFloat = isIPhoneXSeries() ? 34 : 0
 let ScreenWidth = UIScreen.main.bounds.size.width
-let ScreenHeigth = UIScreen.main.bounds.size.height
+let ScreenHeight = UIScreen.main.bounds.size.height
 
 let DominantColor = UIColor.init(red: 242/255.0, green: 77/255.0, blue: 51/255.0, alpha: 1)
 let FooterViewColor = UIColor.init(red: 240/255.0, green: 241/255.0, blue: 244/255.0, alpha: 1)
