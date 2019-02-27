@@ -21,17 +21,16 @@ extension AnswerAPI : TargetType {
     //服务器地址
     public var baseURL: URL {
         switch self {
-        case .detail(_):
-//            return URL(string: "https://www.zhihu.com/appview/v2/answer/604306844")!
-            return URL(string: "https://api.zhihu.com/answers/604306844/")!
+        case .detail(let answerId):
+            let urlString = "https://api.zhihu.com/v4/answers/" + answerId + "?with_pagination=1"
+            return URL(string: urlString)!
         }
     }
     
     //各个请求的具体路径
     public var path: String {
         switch self {
-        case .detail(let answerId):
-//            return "/question/47727970/answer/" + answerId
+        case .detail(_):
             return ""
         }
     }

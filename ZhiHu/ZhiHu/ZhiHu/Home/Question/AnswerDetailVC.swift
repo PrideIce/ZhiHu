@@ -36,20 +36,6 @@ class AnswerDetailVC: ZHViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let webView = WKWebView(frame: .zero)
-//        self.view.addSubview(webView)
-//        webView.snp.makeConstraints { (make) in
-//            make.left.top.right.bottom.equalToSuperview()
-//        }
-//        let contentURL = URL(string: "https://www.zhihu.com/appview/v2/answer/604306844")
-//        var request = URLRequest(url: contentURL!)
-//        request.allHTTPHeaderFields = ZHHeaders
-//        webView.load(request)
-//        do {
-//            let request = try URLRequest(url: contentURL!, method: .get, headers: ZHHeaders)
-//            webView.load(request)
-//        }
-        
         navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.title = "问题详情"
         

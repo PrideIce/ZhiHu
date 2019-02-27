@@ -13,6 +13,11 @@ struct RecommendModel: HandyJSON {
     var common_card: CommonCard?
     var fields: MarketCard?
     var uninterest_reasons: [RecomUninterestReason]?
+    var extra: RecomExtra?
+}
+
+struct RecomExtra: HandyJSON {
+    var id: String?
 }
 
 struct CommonCard: HandyJSON {

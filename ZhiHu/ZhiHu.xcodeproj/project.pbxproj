@@ -21,6 +21,7 @@
 		F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503522100C25001C34BC /* UIButton+ZHEx.swift */; };
 		F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */; };
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
+		F859DBE922268FFB00F6A62D /* ZHAnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */; };
 		F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A4221E970B00908F2A /* AnswerDetailVC.swift */; };
 		F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A8221E99A500908F2A /* AnswerAPI.swift */; };
 		F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AB221FC8A600908F2A /* AnswerModel.swift */; };
@@ -69,6 +70,7 @@
 		F810503522100C25001C34BC /* UIButton+ZHEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ZHEx.swift"; sourceTree = "<group>"; };
 		F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeBaseCell.swift; sourceTree = "<group>"; };
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
+		F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHAnswerDetailVC.swift; sourceTree = "<group>"; };
 		F86300A4221E970B00908F2A /* AnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailVC.swift; sourceTree = "<group>"; };
 		F86300A8221E99A500908F2A /* AnswerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		F86300AB221FC8A600908F2A /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				F86300AA221FC87F00908F2A /* Model */,
 				F807DD3B221EE1F8005C9C9A /* View */,
 				F86300A4221E970B00908F2A /* AnswerDetailVC.swift */,
+				F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */,
 				F86300A8221E99A500908F2A /* AnswerAPI.swift */,
 			);
 			path = Question;
@@ -524,6 +527,7 @@
 				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
 				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
+				F859DBE922268FFB00F6A62D /* ZHAnswerDetailVC.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,

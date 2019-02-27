@@ -134,11 +134,13 @@ extension ZHRecommendVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = recommendModelList?[indexPath.section]
         if model?.common_card != nil {
-            guard let answerUrl = model?.common_card?.feed_content?.title?.action?.intent_url else {
-                return
-            }
-            let vc = AnswerDetailVC()
-            vc.answerUrl = answerUrl
+//            guard let answerUrl = model?.common_card?.feed_content?.title?.action?.intent_url else {
+//                return
+//            }
+//            let vc = AnswerDetailVC()
+//            vc.answerUrl = answerUrl
+            let vc = ZHAnswerDetailVC()
+            vc.answerId = model?.extra?.id;
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
