@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHIdeaController: ZHViewController {
+class ZHIdeaController: ZHBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

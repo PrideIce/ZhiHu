@@ -13,9 +13,29 @@ import HandyJSON
 struct ZHQuestion: HandyJSON {
     var title: String?
     var answer_count: Int?
+    var answerList: [ZHAnswer]?
 }
 
 //Answer
+struct ZHAnswer: HandyJSON {
+    var id: String?
+    var author: ZHAuthor?
+    var excerpt: String?
+    var voteup_count: Int?
+    var thanks_count: Int?
+    var comment_count: Int?
+    var updated_time: Int?
+    var thumbnail_info:ThumbnailInfo?
+}
+
+struct ThumbnailInfo: HandyJSON {
+    var thumbnails: [ZHThumbnail]?
+}
+
+struct ZHThumbnail: HandyJSON {
+    var url: String?
+}
+
 struct ZHFirstAnswer: HandyJSON {
     var excerpt: String?
     var voteup_count: Int?

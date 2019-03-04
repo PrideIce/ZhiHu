@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHMessageViewController: ZHViewController {
+class ZHMessageViewController: ZHBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

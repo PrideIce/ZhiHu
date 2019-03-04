@@ -14,7 +14,7 @@ import Moya
 import HandyJSON
 import SwiftyJSON
 
-class ZHAnswerDetailVC: ZHViewController {
+class ZHAnswerDetailVC: ZHBaseVC {
     
     var answerId: String? {
         didSet {
@@ -94,7 +94,7 @@ class ZHAnswerDetailVC: ZHViewController {
         }
         
         self.answerIdList = [self.answerId!]
-        AnswerProvider.request(.detail(answerId!)) { result in
+        QuestionProvider.request(.detail(answerId!)) { result in
             if case let .success(response) = result {
                 // 解析数据
                 let data = try? response.mapJSON()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHHomeSearchVC: ZHViewController {
+class ZHHomeSearchVC: ZHBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

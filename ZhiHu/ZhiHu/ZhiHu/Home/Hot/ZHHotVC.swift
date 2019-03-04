@@ -12,7 +12,7 @@ import HandyJSON
 import Alamofire
 import MJRefresh
 
-class ZHHotVC: ZHViewController {
+class ZHHotVC: ZHBaseVC {
 
     var recommendModelList:[HotListModel]?
     var pageIndex:Int = 0
@@ -87,5 +87,13 @@ extension ZHHotVC : UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = self.recommendModelList?[indexPath.row]
+        let questionId = model?.card_id?.dropFirst(2)
+        let vc = ZHQuestionVC()
+        vc.questionId = String(questionId!)
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 

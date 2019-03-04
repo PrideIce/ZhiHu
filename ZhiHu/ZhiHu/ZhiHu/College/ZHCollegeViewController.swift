@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHCollegeViewController: ZHViewController {
+class ZHCollegeViewController: ZHBaseVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()

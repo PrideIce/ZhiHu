@@ -9,7 +9,7 @@
 import DNSPageView
 import UIKit
 
-class ZHHomeController: ZHViewController {
+class ZHHomeController: ZHBaseVC {
     let barHeight: CGFloat = 30
     
     override func viewDidLoad() {

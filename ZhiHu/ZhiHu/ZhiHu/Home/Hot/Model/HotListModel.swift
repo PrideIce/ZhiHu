@@ -9,29 +9,30 @@
 import Foundation
 import HandyJSON
 
-struct HotListModel:HandyJSON {
-    var target:hotListTarget?
+struct HotListModel: HandyJSON {
+    var target: hotListTarget?
+    var card_id: String?
 }
 
-struct hotListTarget:HandyJSON {
-    var title_area:hotListTitle?
-    var image_area:hotListImage?
-    var link:hotListLink?
-    var metrics_area:hotMetricsArea?
+struct hotListTarget: HandyJSON {
+    var title_area: hotListTitle?
+    var image_area: hotListImage?
+    var link: hotListLink?
+    var metrics_area: hotMetricsArea?
 }
 
-struct hotMetricsArea:HandyJSON {
-    var text:String?
+struct hotMetricsArea: HandyJSON {
+    var text: String?
 }
 
-struct hotListImage:HandyJSON {
-    var url:String?
+struct hotListImage: HandyJSON {
+    var url: String?
 }
 
-struct hotListLink:HandyJSON {
-    var url:String?
+struct hotListLink: HandyJSON {
+    var url: String?
 }
 
-struct hotListTitle:HandyJSON {
-    var text:String?
+struct hotListTitle: HandyJSON {
+    var text: String?
 }

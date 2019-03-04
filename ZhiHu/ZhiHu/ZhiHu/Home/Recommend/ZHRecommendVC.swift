@@ -12,7 +12,7 @@ import MJRefresh
 import SwiftyJSON
 import UIKit
 
-class ZHRecommendVC: ZHViewController {
+class ZHRecommendVC: ZHBaseVC {
     let ZHHomeBaseCellID = "ZHHomeBaseCell"
     let HomeRecommendImageCellID = "HomeRecommendImageCell"
     let HomeRecommendBigImageCellID = "HomeRecommendBigImageCell"

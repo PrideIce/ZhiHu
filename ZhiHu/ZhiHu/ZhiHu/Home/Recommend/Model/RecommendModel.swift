@@ -77,17 +77,6 @@ struct RecomUninterestReason: HandyJSON {
     var reason_type: String?
 }
 
-//    "id": "607be47c268359c0205067da833d571b",
-//    "url_token": "ruan-mei-fan-zi",
-//    "name": "软妹贩子",
-//    "avatar_url": "https://pic2.zhimg.com/v2-643dedf1d18eef513e0f52f187f6db3d_is.jpg",
-//    "avatar_url_template": "https://pic2.zhimg.com/v2-643dedf1d18eef513e0f52f187f6db3d_{size}.jpg",
-//    "is_org": false,
-//    "type": "people",
-//    "url": "https://www.zhihu.com/people/ruan-mei-fan-zi",
-//    "user_type": "people",
-//    "headline": "国企民工 上八休八",
-//    "gender": -1,
 struct ZHMember: HandyJSON {
     var id: String?
     var url_token: String?

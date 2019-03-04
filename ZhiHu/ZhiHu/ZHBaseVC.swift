@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZHViewController: UIViewController {
+class ZHBaseVC: UIViewController {
     
     var backBtn: UIButton = {
         let button = UIButton(type: .custom)
