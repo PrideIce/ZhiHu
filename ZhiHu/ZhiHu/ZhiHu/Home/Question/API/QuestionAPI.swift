@@ -44,7 +44,7 @@ extension QuestionAPI: TargetType {
         var parmeters: [String: Any] = [:]
         switch self {
         case let .list(_, offset):
-            parmeters = ["limit": 5,
+            parmeters = ["limit": 10,
                          "offset": offset,
                          "reverse_order": 0,
                          "show_detail": 1]

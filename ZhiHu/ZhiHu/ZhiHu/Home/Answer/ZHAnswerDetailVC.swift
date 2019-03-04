@@ -69,7 +69,7 @@ class ZHAnswerDetailVC: ZHBaseVC {
         super.viewDidLoad()
         
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = "问题详情"
+        navigationItem.title = "答案详情"
         view.backgroundColor = BGColor
         
         view.addSubview(headerView)
