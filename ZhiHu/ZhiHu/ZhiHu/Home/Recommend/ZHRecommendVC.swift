@@ -55,9 +55,9 @@ class ZHRecommendVC: ZHViewController {
     func refreshDataSource() {
         // 首页接口请求
         ZHRecommendProvider.request(.recommendList(pageIndex)) { result in
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
             if case let .success(response) = result {
-                self.tableView.mj_header.endRefreshing()
-                self.tableView.mj_footer.endRefreshing()
                 // 解析数据
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
@@ -134,11 +134,6 @@ extension ZHRecommendVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = recommendModelList?[indexPath.section]
         if model?.common_card != nil {
-//            guard let answerUrl = model?.common_card?.feed_content?.title?.action?.intent_url else {
-//                return
-//            }
-//            let vc = AnswerDetailVC()
-//            vc.answerUrl = answerUrl
             let vc = ZHAnswerDetailVC()
             vc.answerId = model?.extra?.id;
             vc.hidesBottomBarWhenPushed = true

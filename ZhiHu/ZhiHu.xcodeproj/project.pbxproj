@@ -21,8 +21,8 @@
 		F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503522100C25001C34BC /* UIButton+ZHEx.swift */; };
 		F8105039221016F1001C34BC /* ZHHomeBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */; };
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
-		F859DBE922268FFB00F6A62D /* ZHAnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */; };
-		F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A4221E970B00908F2A /* AnswerDetailVC.swift */; };
+		F8305FF5222CBB8000A4BD90 /* ZHAnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8305FF4222CBB7F00A4BD90 /* ZHAnswerDetailVC.swift */; };
+		F859DBEB2227C0B200F6A62D /* ZHSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859DBEA2227C0B200F6A62D /* ZHSetting.swift */; };
 		F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300A8221E99A500908F2A /* AnswerAPI.swift */; };
 		F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AB221FC8A600908F2A /* AnswerModel.swift */; };
 		F86300AF221FCBC900908F2A /* ZHAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */; };
@@ -70,8 +70,8 @@
 		F810503522100C25001C34BC /* UIButton+ZHEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ZHEx.swift"; sourceTree = "<group>"; };
 		F8105038221016F1001C34BC /* ZHHomeBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHHomeBaseCell.swift; sourceTree = "<group>"; };
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
-		F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHAnswerDetailVC.swift; sourceTree = "<group>"; };
-		F86300A4221E970B00908F2A /* AnswerDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerDetailVC.swift; sourceTree = "<group>"; };
+		F8305FF4222CBB7F00A4BD90 /* ZHAnswerDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAnswerDetailVC.swift; sourceTree = "<group>"; };
+		F859DBEA2227C0B200F6A62D /* ZHSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHSetting.swift; sourceTree = "<group>"; };
 		F86300A8221E99A500908F2A /* AnswerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		F86300AB221FC8A600908F2A /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
 		F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHAnswerCell.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				F810502B220EFC3E001C34BC /* Recommend */,
 				F810502C220EFC42001C34BC /* Hot */,
 				F810502D220EFC46001C34BC /* Video */,
-				F86300A3221E968900908F2A /* Question */,
+				F86300A3221E968900908F2A /* Answer */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -250,16 +250,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		F86300A3221E968900908F2A /* Question */ = {
+		F86300A3221E968900908F2A /* Answer */ = {
 			isa = PBXGroup;
 			children = (
+				F8305FF4222CBB7F00A4BD90 /* ZHAnswerDetailVC.swift */,
 				F86300AA221FC87F00908F2A /* Model */,
 				F807DD3B221EE1F8005C9C9A /* View */,
-				F86300A4221E970B00908F2A /* AnswerDetailVC.swift */,
-				F859DBE822268FFB00F6A62D /* ZHAnswerDetailVC.swift */,
 				F86300A8221E99A500908F2A /* AnswerAPI.swift */,
 			);
-			path = Question;
+			path = Answer;
 			sourceTree = "<group>";
 		};
 		F86300AA221FC87F00908F2A /* Model */ = {
@@ -302,6 +301,7 @@
 				F8C3E192220431BB004D2555 /* AppDelegate.swift */,
 				F8105028220EFACD001C34BC /* ZHViewController.swift */,
 				F810502E220EFD27001C34BC /* Const.swift */,
+				F859DBEA2227C0B200F6A62D /* ZHSetting.swift */,
 				F8105018220EC77E001C34BC /* ZhiHu */,
 				F810503422100B8A001C34BC /* Category */,
 				F8C3E194220431BB004D2555 /* FirstViewController.swift */,
@@ -523,13 +523,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8DEECC62215114E0060DBFB /* HotListModel.swift in Sources */,
-				F86300A6221E970B00908F2A /* AnswerDetailVC.swift in Sources */,
 				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
 				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
-				F859DBE922268FFB00F6A62D /* ZHAnswerDetailVC.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHViewController.swift in Sources */,
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
+				F859DBEB2227C0B200F6A62D /* ZHSetting.swift in Sources */,
+				F8305FF5222CBB8000A4BD90 /* ZHAnswerDetailVC.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
 				F86300A9221E99A500908F2A /* AnswerAPI.swift in Sources */,
 				F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */,
