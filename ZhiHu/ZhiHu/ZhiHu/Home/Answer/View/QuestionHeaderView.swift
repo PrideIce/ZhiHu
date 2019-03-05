@@ -9,33 +9,79 @@
 import UIKit
 import SnapKit
 
-class QuestionHeaderView: UIView {
+enum QuestionHeaderStyle {
+    case list
+    case detail
+}
 
-    var title: UILabel = {
+class QuestionHeaderView: UIView {
+    
+    typealias HeaderViewBlock = (Int) ->Void
+    var actionBlock: HeaderViewBlock?
+    
+    var style: QuestionHeaderStyle = .detail {
+        didSet {
+            if style == .detail {
+                inviteBtn.setTitleColor(ThemeColorBlue, for: .normal)
+                inviteBtn.tintColor = ThemeColorBlue
+                profileBtn.setTitle("查看全部答案", for: .normal)
+                let image = UIImage.init(named: "ZHModuleQA.bundle/Night_Answer_Meta_CardIndicator")?.withRenderingMode(.alwaysTemplate)
+                profileBtn.setImage(image, for: .normal)
+                answerBtn.setTitleColor(ThemeColorBlue, for: .normal)
+                answerBtn.tintColor = ThemeColorBlue
+                focusBtn.isHidden = true
+            } else {
+                inviteBtn.setTitleColor(UIColor.init(hex: 0x666666), for: .normal)
+                inviteBtn.tintColor = UIColor.init(hex: 0x666666)
+                profileBtn.setTitle("1245人关注  80条评论", for: .normal)
+                profileBtn.setImage(nil, for: .normal)
+                answerBtn.setTitleColor(UIColor.init(hex: 0x666666), for: .normal)
+                answerBtn.tintColor = UIColor.init(hex: 0x666666)
+                focusBtn.isHidden = false
+            }
+        }
+    }
+
+    var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 0
         return label
     }()
     
-    var answers: UIButton = {
+    var profileBtn: UIButton = {
         let button = UIButton.init(type: .custom)
         button.setTitle("查看全部答案", for: .normal)
-        button.setTitleColor(.gray, for: .normal)
+        button.setTitleColor(UIColor.init(hex: 0x666666), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         button.semanticContentAttribute = .forceRightToLeft
         button.tintColor = UIColor.init(hex: 0xCCCCCC)
         let image = UIImage.init(named: "ZHModuleQA.bundle/Night_Answer_Meta_CardIndicator")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(seeAllAnswers), for: .touchUpInside)
+        return button
+    }()
+    
+    var focusBtn: UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.setTitle(" 关注问题", for: .normal)
+        button.backgroundColor = ThemeColorBlue
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 4
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.setTitleColor(.white, for: .normal)
+        let image = UIImage(named: "ZHModuleDB.bundle/ZH_icon_24px_add")
+        button.setImage(image, for: .normal)
+        button.isHidden = true
         return button
     }()
     
     var inviteBtn: UIButton = {
         let button = UIButton.init(type: .custom)
         button.setTitle(" 邀请回答", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        button.setTitleColor(UIColor.init(hex: 0x0B92FF), for: .normal)
-        button.tintColor = UIColor.init(hex: 0x0B92FF)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.setTitleColor(ThemeColorBlue, for: .normal)
+        button.tintColor = ThemeColorBlue
         let image = UIImage(named: "ZHModuleQA.bundle/ZHQuestion_vc_Invite_Normal")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
         return button
@@ -44,9 +90,9 @@ class QuestionHeaderView: UIView {
     var answerBtn: UIButton = {
         let button = UIButton.init(type: .custom)
         button.setTitle(" 写回答", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        button.setTitleColor(UIColor.init(hex: 0x0B92FF), for: .normal)
-        button.tintColor = UIColor.init(hex: 0x0B92FF)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
+        button.setTitleColor(ThemeColorBlue, for: .normal)
+        button.tintColor = ThemeColorBlue
         let image = UIImage(named: "ZHModuleQA.bundle/Night_ZHAPP_Ask_Post")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
         return button
@@ -68,19 +114,26 @@ class QuestionHeaderView: UIView {
         super.init(frame: frame)
         backgroundColor = .white
         
-        title.text = "你所见过的善良的开发设计的？"
-        addSubview(title)
-        title.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(12)
             make.top.equalToSuperview().offset(25)
-//            make.right.equalToSuperview().offset(10)
+            make.right.equalToSuperview().offset(-12)
         }
+        titleLabel.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
         
-        addSubview(answers)
-        answers.snp.makeConstraints { (make) in
+        addSubview(profileBtn)
+        profileBtn.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(12)
             make.bottom.equalToSuperview().offset(-50)
-            //make.top.equalTo(title.snp.bottom).offset(30)
+        }
+        
+        addSubview(focusBtn)
+        focusBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-15)
+            make.centerY.equalTo(profileBtn)
+            make.width.equalTo(85)
+            make.height.equalTo(26)
         }
         
         addSubview(inviteBtn)
@@ -115,5 +168,11 @@ class QuestionHeaderView: UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func seeAllAnswers() {
+        if self.style == .detail {
+            self.actionBlock?(0)
+        }
     }
 }

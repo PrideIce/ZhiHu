@@ -92,6 +92,7 @@ extension ZHHotVC : UITableViewDelegate,UITableViewDataSource {
         let questionId = model?.card_id?.dropFirst(2)
         let vc = ZHQuestionVC()
         vc.questionId = String(questionId!)
+        vc.questionTitle = model?.target?.title_area?.text ?? ""
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

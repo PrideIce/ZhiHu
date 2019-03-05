@@ -15,6 +15,7 @@ class ZHQuestionVC: ZHBaseVC {
     
     var offset: Int = 0
     var questionId: String = ""
+    var questionTitle: String = ""
     var answerList: [ZHAnswer] = []
     
     lazy var tableView: UITableView = {
@@ -29,6 +30,7 @@ class ZHQuestionVC: ZHBaseVC {
     
     let headerView: QuestionHeaderView = {
         let headerView = QuestionHeaderView()
+        headerView.style = .list
         headerView.frame = CGRect.init(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: 150)
         return headerView
     }()
@@ -53,6 +55,8 @@ class ZHQuestionVC: ZHBaseVC {
             self?.refreshDataSource()
         }
         tableView.mj_header.beginRefreshing()
+        
+        headerView.titleLabel.text = questionTitle
     }
     
     func refreshDataSource() {
@@ -64,10 +68,8 @@ class ZHQuestionVC: ZHBaseVC {
                 // 解析数据
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
-                print(json)
                 
                 if let mappedObject = JSONDeserializer<ZHAnswer>.deserializeModelArrayFrom(json: json["data"].description) {
-                    print(mappedObject)
                     if self.offset == 0 {
                         self.answerList = mappedObject as! [ZHAnswer]
                     } else {
@@ -116,7 +118,8 @@ extension ZHQuestionVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = answerList[indexPath.section]
         let vc = ZHAnswerDetailVC()
-        vc.answerId = model.id ?? "";
+        vc.answerId = model.id ?? ""
+        vc.questionTitle = questionTitle
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }

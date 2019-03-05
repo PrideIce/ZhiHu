@@ -135,7 +135,8 @@ extension ZHRecommendVC: UITableViewDelegate, UITableViewDataSource {
         let model = recommendModelList?[indexPath.section]
         if model?.common_card != nil {
             let vc = ZHAnswerDetailVC()
-            vc.answerId = model?.extra?.id;
+            vc.answerId = model?.extra?.id
+            vc.questionTitle = model?.common_card?.feed_content?.title?.panel_text ?? ""
             vc.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(vc, animated: true)
         }

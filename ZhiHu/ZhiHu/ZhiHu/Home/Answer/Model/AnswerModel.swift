@@ -14,6 +14,7 @@ struct ZHQuestion: HandyJSON {
     var title: String?
     var answer_count: Int?
     var answerList: [ZHAnswer]?
+    var id: String?
 }
 
 //Answer

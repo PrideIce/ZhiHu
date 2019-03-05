@@ -28,7 +28,7 @@
 		F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820F822128AA200A780EF /* RecommendModel.swift */; };
 		F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */; };
 		F8B81070222D0E9100DF5F31 /* ZHQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8106F222D0E9100DF5F31 /* ZHQuestionVC.swift */; };
-		F8B81076222D174100DF5F31 /* QuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B81075222D174100DF5F31 /* QuestionAPI.swift */; };
+		F8B81076222D174100DF5F31 /* AnswerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B81075222D174100DF5F31 /* AnswerAPI.swift */; };
 		F8B81078222D2E8A00DF5F31 /* QuestionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B81077222D2E8A00DF5F31 /* QuestionBaseCell.swift */; };
 		F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E192220431BB004D2555 /* AppDelegate.swift */; };
 		F8C3E195220431BB004D2555 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C3E194220431BB004D2555 /* FirstViewController.swift */; };
@@ -79,7 +79,7 @@
 		F8A820F822128AA200A780EF /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F8B8106F222D0E9100DF5F31 /* ZHQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHQuestionVC.swift; sourceTree = "<group>"; };
-		F8B81075222D174100DF5F31 /* QuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAPI.swift; sourceTree = "<group>"; };
+		F8B81075222D174100DF5F31 /* AnswerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerAPI.swift; sourceTree = "<group>"; };
 		F8B81077222D2E8A00DF5F31 /* QuestionBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBaseCell.swift; sourceTree = "<group>"; };
 		F8C3E18F220431BB004D2555 /* ZhiHu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhiHu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C3E192220431BB004D2555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 		F8B81071222D0E9500DF5F31 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				F8B81075222D174100DF5F31 /* QuestionAPI.swift */,
+				F8B81075222D174100DF5F31 /* AnswerAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -582,7 +582,7 @@
 				F8DEECBD2213DED00060DBFB /* UIScrollView+Ex.swift in Sources */,
 				F810502F220EFD27001C34BC /* Const.swift in Sources */,
 				F8C3E193220431BB004D2555 /* AppDelegate.swift in Sources */,
-				F8B81076222D174100DF5F31 /* QuestionAPI.swift in Sources */,
+				F8B81076222D174100DF5F31 /* AnswerAPI.swift in Sources */,
 				F8DA5A9F2211269600BE0BE9 /* ZHRecommendAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,8 @@ import SwiftyJSON
 
 class ZHAnswerDetailVC: ZHBaseVC {
     
+    var questionTitle: String = ""
+    var questionId: String = ""
     var answerId: String? {
         didSet {
             webView.scrollView.mj_header.endRefreshing()
@@ -72,7 +74,17 @@ class ZHAnswerDetailVC: ZHBaseVC {
         navigationItem.title = "答案详情"
         view.backgroundColor = BGColor
         
+        headerView.titleLabel.text = questionTitle
         view.addSubview(headerView)
+        headerView.actionBlock = { [unowned self](btnIndex: Int) in
+            if btnIndex == 0 {
+                let vc = ZHQuestionVC()
+                vc.questionId = self.questionId
+                vc.questionTitle = self.questionTitle
+                vc.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
         
         view.addSubview(webView)
         webView.snp.makeConstraints({ (make) in
@@ -99,11 +111,24 @@ class ZHAnswerDetailVC: ZHBaseVC {
                 // 解析数据
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
-                print(json)
+                //print(json)
                 
                 if let mappedObject = JSONDeserializer<ZHFirstAnswer>.deserializeFrom(json: json.description) {
                     self.answerIdList? += mappedObject.pagination_info?.next_answer_ids ?? []
-                    print(self.answerIdList!)
+                    //print(self.answerIdList!)
+                }
+            }
+        }
+        
+        QuestionProvider.request(.question(answerId!)) { result in
+            if case let .success(response) = result {
+                // 解析数据
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                print(json)
+                
+                if let mappedObject = JSONDeserializer<ZHQuestion>.deserializeFrom(json: json.description) {
+                    self.questionId = mappedObject.id ?? ""
                 }
             }
         }

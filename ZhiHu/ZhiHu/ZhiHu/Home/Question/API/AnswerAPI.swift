@@ -11,14 +11,15 @@ import HandyJSON
 import Moya
 
 // 首页推荐接口
-let QuestionProvider = MoyaProvider<QuestionAPI>()
+let QuestionProvider = MoyaProvider<AnswerAPI>()
 
-enum QuestionAPI {
+enum AnswerAPI {
     case list(String, Int)
     case detail(String)
+    case question(String)
 }
 
-extension QuestionAPI: TargetType {
+extension AnswerAPI: TargetType {
     // 服务器地址
     public var baseURL: URL {
         return URL(string: "https://api.zhihu.com")!
@@ -31,6 +32,8 @@ extension QuestionAPI: TargetType {
             return "/v4/questions/" + questionId + "/answers"
         case let .detail(answerId):
             return "/v4/answers/" + answerId
+        case let.question(answerId):
+            return "/v4/answers/" + answerId + "/question"
         }
     }
 
@@ -50,6 +53,8 @@ extension QuestionAPI: TargetType {
                          "show_detail": 1]
         case .detail:
             parmeters = ["with_pagination": 1]
+        case .question(_):
+            return .requestPlain
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
