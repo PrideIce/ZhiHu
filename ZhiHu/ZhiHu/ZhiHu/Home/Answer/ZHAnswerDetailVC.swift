@@ -64,6 +64,22 @@ class ZHAnswerDetailVC: ZHBaseVC {
         return imgView
     }()
     
+    let nextBtn: WLButton = {
+        let button = WLButton()
+        button.setTitle(" 下一个回答", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        button.setImage(UIImage.init(named: "ZHModuleQA.bundle/ZHAnswer_next_arrow"), for: .normal)
+        button.backgroundColor = .white
+        button.layer.masksToBounds = true
+        button.layer.cornerRadius = 20
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.init(hex: 0xEEEEEE).cgColor
+        button.addTarget(self, action: #selector(nextAnswer), for: .touchUpInside)
+        button.moveEnable = true
+        return button
+    }()
+    
     var answerIdList: [String]?
     var index: Int = 0
 
@@ -103,6 +119,14 @@ class ZHAnswerDetailVC: ZHBaseVC {
             make.left.right.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom).offset(8)
             make.height.equalTo(ScreenWidth)
+        }
+        
+        view.addSubview(nextBtn)
+        nextBtn.snp.makeConstraints { (make) in
+            make.centerY.equalToSuperview()
+            make.right.equalTo(view.snp.right).offset(-15)
+            make.width.equalTo(110)
+            make.height.equalTo(40)
         }
         
         self.answerIdList = [self.answerId!]
@@ -165,6 +189,10 @@ class ZHAnswerDetailVC: ZHBaseVC {
                 make.top.equalTo(NavigationBarHeight)
             })
         }
+    }
+    
+    @objc func nextAnswer() {
+        webView.scrollView.mj_footer.beginRefreshing()
     }
 }
 
