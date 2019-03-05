@@ -154,11 +154,8 @@
 				F810501E220EC83C001C34BC /* ZHHomeController.swift */,
 				F8105030220FEEC6001C34BC /* ZHHomeSearchVC.swift */,
 				F8105031220FEEC6001C34BC /* ZHHomeSearchVC.xib */,
-				F8DEECBE22144E640060DBFB /* Base */,
-				F810502A220EFC2A001C34BC /* Focus */,
 				F810502B220EFC3E001C34BC /* Recommend */,
 				F810502C220EFC42001C34BC /* Hot */,
-				F810502D220EFC46001C34BC /* Video */,
 				F8B8106E222D0E1200DF5F31 /* Question */,
 				F86300A3221E968900908F2A /* Answer */,
 			);
@@ -197,13 +194,6 @@
 			path = Idea;
 			sourceTree = "<group>";
 		};
-		F810502A220EFC2A001C34BC /* Focus */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Focus;
-			sourceTree = "<group>";
-		};
 		F810502B220EFC3E001C34BC /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,13 +213,6 @@
 				F8DEECC32215110B0060DBFB /* Model */,
 			);
 			path = Hot;
-			sourceTree = "<group>";
-		};
-		F810502D220EFC46001C34BC /* Video */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		F810503422100B8A001C34BC /* Category */ = {
@@ -356,13 +339,6 @@
 				F8DA5A9E2211269600BE0BE9 /* ZHRecommendAPI.swift */,
 			);
 			path = API;
-			sourceTree = "<group>";
-		};
-		F8DEECBE22144E640060DBFB /* Base */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		F8DEECC32215110B0060DBFB /* Model */ = {

@@ -6,18 +6,20 @@
 //  Copyright © 2019 陈逸辰. All rights reserved.
 //
 
-import UIKit
-import SnapKit
-import MJRefresh
-import WebKit
-import Moya
 import HandyJSON
+import MJRefresh
+import Moya
+import SnapKit
 import SwiftyJSON
+import UIKit
+import WebKit
 
 class ZHAnswerDetailVC: ZHBaseVC {
-    
     var questionTitle: String = ""
     var questionId: String = ""
+    var answerIdList: [String]?
+    var index: Int = 0
+
     var answerId: String? {
         didSet {
             webView.scrollView.mj_header.endRefreshing()
@@ -31,68 +33,85 @@ class ZHAnswerDetailVC: ZHBaseVC {
             webView.navigationDelegate = self
         }
     }
-    
+
     var webView: WKWebView = {
         let webView = WKWebView()
-        
+
         let header = MJRefreshNormalHeader()
         header.lastUpdatedTimeLabel.isHidden = true
         header.stateLabel.text = "查看上一个答案"
         webView.scrollView.mj_header = header
-        
+
         let footer = MJRefreshBackNormalFooter()
         footer.setTitle("", for: .idle)
         footer.setTitle("查看下一个答案", for: .pulling)
         footer.setTitle("加载中", for: .refreshing)
         footer.isHidden = true
         webView.scrollView.mj_footer = footer
-        
+
         return webView
     }()
-    
+
     let headerView: QuestionHeaderView = {
         let headerView = QuestionHeaderView()
-        headerView.frame = CGRect.init(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: 150)
+        headerView.frame = CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: 150)
         return headerView
     }()
-    
+
     let loadingView: UIImageView = {
         let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFill
-        imgView.image = UIImage.init(named: "ZHModuleDB.bundle/ZHDB_Discover_People_Loading")
+        imgView.image = UIImage(named: "ZHModuleDB.bundle/ZHDB_Discover_People_Loading")
         imgView.backgroundColor = BGColor
         return imgView
     }()
-    
+
     let nextBtn: WLButton = {
         let button = WLButton()
         button.setTitle(" 下一个回答", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        button.setImage(UIImage.init(named: "ZHModuleQA.bundle/ZHAnswer_next_arrow"), for: .normal)
+        button.setImage(UIImage(named: "ZHModuleQA.bundle/ZHAnswer_next_arrow"), for: .normal)
         button.backgroundColor = .white
         button.layer.masksToBounds = true
         button.layer.cornerRadius = 20
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.init(hex: 0xEEEEEE).cgColor
+        button.layer.borderColor = UIColor(hex: 0xEEEEEE).cgColor
         button.addTarget(self, action: #selector(nextAnswer), for: .touchUpInside)
         button.moveEnable = true
         return button
     }()
-    
-    var answerIdList: [String]?
-    var index: Int = 0
+
+    let searchField: UITextField = {
+        let field = UITextField()
+        field.frame = CGRect(x: 0, y: 0, width: ScreenWidth - 100, height: 30)
+        field.placeholder = "搜索知乎内容"
+        field.textAlignment = .center
+        field.font = UIFont.systemFont(ofSize: 14)
+        field.borderStyle = .roundedRect
+        field.backgroundColor = BGColor
+        return field
+    }()
+
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 0, y: 0, width: ScreenWidth - 100, height: 30)
+        label.textAlignment = .center
+        label.textColor = .black
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationController?.setNavigationBarHidden(false, animated: false)
-        navigationItem.title = "答案详情"
+        navigationItem.titleView = searchField
         view.backgroundColor = BGColor
-        
+
         headerView.titleLabel.text = questionTitle
+        titleLabel.text = questionTitle
         view.addSubview(headerView)
-        headerView.actionBlock = { [unowned self](btnIndex: Int) in
+        headerView.actionBlock = { [unowned self] (btnIndex: Int) in
             if btnIndex == 0 {
                 let vc = ZHQuestionVC()
                 vc.questionId = self.questionId
@@ -101,9 +120,9 @@ class ZHAnswerDetailVC: ZHBaseVC {
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }
-        
+
         view.addSubview(webView)
-        webView.snp.makeConstraints({ (make) in
+        webView.snp.makeConstraints({ make in
             make.left.right.bottom.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom).offset(8)
         })
@@ -113,98 +132,123 @@ class ZHAnswerDetailVC: ZHBaseVC {
         webView.scrollView.mj_footer.refreshingBlock = { [weak self] in
             self?.loadFooter()
         }
-        
+
         view.addSubview(loadingView)
-        loadingView.snp.makeConstraints { (make) in
+        loadingView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.top.equalTo(headerView.snp.bottom).offset(8)
             make.height.equalTo(ScreenWidth)
         }
-        
+
         view.addSubview(nextBtn)
-        nextBtn.snp.makeConstraints { (make) in
+        nextBtn.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
             make.right.equalTo(view.snp.right).offset(-15)
             make.width.equalTo(110)
             make.height.equalTo(40)
         }
-        
-        self.answerIdList = [self.answerId!]
+
+        answerIdList = [self.answerId!]
         QuestionProvider.request(.detail(answerId!)) { result in
             if case let .success(response) = result {
                 // 解析数据
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
-                //print(json)
-                
+                // print(json)
+
                 if let mappedObject = JSONDeserializer<ZHFirstAnswer>.deserializeFrom(json: json.description) {
                     self.answerIdList? += mappedObject.pagination_info?.next_answer_ids ?? []
-                    //print(self.answerIdList!)
+                    // print(self.answerIdList!)
                 }
             }
         }
-        
+
         QuestionProvider.request(.question(answerId!)) { result in
             if case let .success(response) = result {
                 // 解析数据
                 let data = try? response.mapJSON()
                 let json = JSON(data!)
                 print(json)
-                
+
                 if let mappedObject = JSONDeserializer<ZHQuestion>.deserializeFrom(json: json.description) {
                     self.questionId = mappedObject.id ?? ""
                 }
             }
         }
     }
-    
+
     func loadHeader() {
-        if self.index > 0 {
-            self.index -= 1
-            self.answerId = self.answerIdList?[self.index]
+        if index > 0 {
+            index -= 1
+            answerId = answerIdList?[self.index]
         } else {
-            self.webView.scrollView.mj_header.endRefreshing()
+            webView.scrollView.mj_header.endRefreshing()
         }
-        if self.index == 0 {
-            self.headerView.isHidden = false
-            self.webView.snp.remakeConstraints({ (make) in
+        if index == 0 {
+            headerView.isHidden = false
+            webView.snp.remakeConstraints({ make in
                 make.left.right.bottom.equalToSuperview()
                 make.top.equalTo(self.headerView.snp.bottom).offset(8)
             })
         }
     }
-    
+
     func loadFooter() {
-        self.index += 1
-        if self.index < self.answerIdList?.count ?? 1 {
-            self.answerId = self.answerIdList?[self.index]
+        index += 1
+        if index < answerIdList?.count ?? 1 {
+            answerId = answerIdList?[self.index]
         } else {
-            self.index = (self.answerIdList?.count ?? 1) - 1
-            self.webView.scrollView.mj_footer.endRefreshingWithNoMoreData()
+            index = (answerIdList?.count ?? 1) - 1
+            webView.scrollView.mj_footer.endRefreshingWithNoMoreData()
         }
-        if self.index > 0 {
-            self.headerView.isHidden = true
-            self.webView.snp.remakeConstraints({ (make) in
+        if index > 0 {
+            headerView.isHidden = true
+            webView.snp.remakeConstraints({ make in
                 make.left.right.bottom.equalToSuperview()
                 make.top.equalTo(NavigationBarHeight)
             })
         }
     }
-    
+
     @objc func nextAnswer() {
+        webView.scrollView.delegate = nil
         webView.scrollView.mj_footer.beginRefreshing()
     }
 }
 
-
 extension ZHAnswerDetailVC: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.loadingView.removeFromSuperview()
+        loadingView.removeFromSuperview()
+        self.webView.scrollView.mj_footer.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.webView.scrollView.delegate = self
+        })
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        loadingView.removeFromSuperview()
         self.webView.scrollView.mj_footer.isHidden = false
     }
-    
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        self.loadingView.removeFromSuperview()
-        self.webView.scrollView.mj_footer.isHidden = false
+}
+
+extension ZHAnswerDetailVC: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 30 {
+            searchField.alpha = 0
+            if titleLabel.alpha == 0 {
+                navigationItem.titleView = titleLabel
+                UIView.animate(withDuration: 1) {
+                    self.titleLabel.alpha = 1
+                }
+            }
+        } else {
+            titleLabel.alpha = 0
+            if searchField.alpha == 0 {
+                navigationItem.titleView = searchField
+                UIView.animate(withDuration: 0.5) {
+                    self.searchField.alpha = 1
+                }
+            }
+        }
     }
 }
