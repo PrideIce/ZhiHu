@@ -59,7 +59,7 @@ let processor = DownsamplingImageProcessor(size: imageView.size)
              >> RoundCornerImageProcessor(cornerRadius: 20)
 imageView.kf.indicatorType = .activity
 imageView.kf.setImage(
-    with: url,
+    with: resource,
     placeholder: UIImage(named: "placeholderImage"),
     options: [
         .processor(processor),

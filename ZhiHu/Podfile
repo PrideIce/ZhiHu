@@ -19,7 +19,7 @@ use_frameworks!
     pod 'MJRefresh'
     #pod 'SkeletonView'
     #消息提示
-    pod 'SwiftMessages'
+    pod 'SwiftMessages', '~> 5.0.1'
     #pod 'YYKit'
     pod 'SVProgressHUD'
     #播放网络音频

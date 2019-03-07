@@ -10,6 +10,7 @@ import HandyJSON
 import MJRefresh
 import Moya
 import SnapKit
+import SwiftMessages
 import SwiftyJSON
 import UIKit
 import WebKit
@@ -100,6 +101,40 @@ class ZHAnswerDetailVC: ZHBaseVC {
         label.textColor = .black
         return label
     }()
+    
+    static func demoCentered() {
+        let view = MessageView.viewFromNib(layout: .tabView)
+        view.configureDropShadow()
+        let iconText = ["🤔", "😳", "🙄", "😶"].sm_random()!
+        view.configureContent(title: "Warning", body: "Consider yourself warned.", iconText: iconText)
+        view.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        (view.backgroundView as? CornerRoundingView)?.cornerRadius = 10
+        
+        var config = SwiftMessages.defaultConfig
+        config.presentationStyle = .bottom
+        config.duration = .forever
+        config.dimMode = .gray(interactive: true)
+        //Disable the interactive pan-to-hide gesture.
+        config.interactiveHide = false
+        config.eventListeners.append() { event in
+            if case .didHide = event { print("yep") }
+        }
+        SwiftMessages.show(config: config, view: view)
+    }
+    
+    func commentView() {
+        let vc = ZHQuestionVC()
+        vc.questionId = self.questionId
+        vc.questionTitle = self.questionTitle
+        vc.preferredContentSize.height = ScreenHeight - StatusBarHeight - 100
+        view.layer.masksToBounds = true
+        view.layer.cornerRadius = 10
+        
+        let segue = SwiftMessagesSegue(identifier: nil, source: self, destination: vc)
+        segue.configure(layout: .bottomMessage)
+        prepare(for: segue, sender: nil)
+        segue.perform()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,6 +153,9 @@ class ZHAnswerDetailVC: ZHBaseVC {
                 vc.questionTitle = self.questionTitle
                 vc.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(vc, animated: true)
+            } else if btnIndex == 2 {
+                //ZHAnswerDetailVC.demoCentered()
+                self.commentView()
             }
         }
 

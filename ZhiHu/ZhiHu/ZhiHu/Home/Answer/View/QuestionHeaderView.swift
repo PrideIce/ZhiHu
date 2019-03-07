@@ -57,7 +57,8 @@ class QuestionHeaderView: UIView {
         button.tintColor = UIColor(hex: 0xCCCCCC)
         let image = UIImage(named: "ZHModuleQA.bundle/Night_Answer_Meta_CardIndicator")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
-        button.addTarget(self, action: #selector(seeAllAnswers), for: .touchUpInside)
+        button.tag = 0
+        button.addTarget(self, action: #selector(seeAllAnswers(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -83,6 +84,8 @@ class QuestionHeaderView: UIView {
         button.tintColor = ThemeColorBlue
         let image = UIImage(named: "ZHModuleQA.bundle/ZHQuestion_vc_Invite_Normal")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
+        button.tag = 1
+        button.addTarget(self, action: #selector(seeAllAnswers(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -94,6 +97,8 @@ class QuestionHeaderView: UIView {
         button.tintColor = ThemeColorBlue
         let image = UIImage(named: "ZHModuleQA.bundle/Night_ZHAPP_Ask_Post")?.withRenderingMode(.alwaysTemplate)
         button.setImage(image, for: .normal)
+        button.tag = 2
+        button.addTarget(self, action: #selector(seeAllAnswers(_:)), for: .touchUpInside)
         return button
     }()
 
@@ -169,9 +174,7 @@ class QuestionHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    @objc func seeAllAnswers() {
-        if style == .detail {
-            actionBlock?(0)
-        }
+    @objc func seeAllAnswers(_ sender: UIButton) {
+        actionBlock?(sender.tag)
     }
 }

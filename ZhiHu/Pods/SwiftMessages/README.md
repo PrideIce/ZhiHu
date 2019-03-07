@@ -6,6 +6,20 @@
 [![Platform](https://img.shields.io/cocoapods/p/SwiftMessages.svg?style=flat)](http://cocoadocs.org/docsets/SwiftMessages)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+## 🔥 View Controllers 🔥
+
+SwiftMessages can now present view controllers using the `SwiftMessagesSegue` custom modal segue!
+
+<p align="center">
+  <img src="./Design/SwiftMessagesSegue.gif" />
+</p>
+
+[`SwiftMessagesSegue`](./SwiftMessages/SwiftMessagesSegue.swift) is a subclass of `UIStoryboardSegue` that integrates directly into Interface Builder as a custom modal segue, enabling view controllers to take advantage of SwiftMessages layouts, animations and more. `SwiftMessagesSegue` works with any UIKIt project — storyboards are not required. Refer to the View Controllers readme below for more information.
+
+#### [View Controllers Readme](./ViewControllers.md)
+
+And check out our blog post [Elegant Custom UIViewController Transitioning](http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/) to learn a great technique you can use to build your own custom segues that utilize `UIViewControllerTransitioningDelegate` and `UIViewControllerAnimatedTransitioning`.
+
 <p align="center">
   <img src="./Design/swiftmessages.png" />
 </p>
@@ -31,20 +45,6 @@ Try exploring [the demo app via appetize.io](http://goo.gl/KXw4nD) to get a feel
 <p align="center">
 	<a href="http://goo.gl/KXw4nD"><img src="./Demo/appetize.png" /></a>
 </p>
-
-## View Controllers
-
-SwiftMessages can present view controllers using the `SwiftMessagesSegue` custom modal segue!
-
-<p align="center">
-  <img src="./Design/SwiftMessagesSegue.gif" />
-</p>
-
-[`SwiftMessagesSegue`](./SwiftMessages/SwiftMessagesSegue.swift) is a subclass of `UIStoryboardSegue` that integrates directly into Interface Builder as a custom modal segue, enabling view controllers to take advantage of SwiftMessages layouts, animations and more. `SwiftMessagesSegue` works with any UIKIt project — storyboards are not required. Refer to the View Controllers readme below for more information.
-
-#### [View Controllers Readme](./ViewControllers.md)
-
-And check out our blog post [Elegant Custom UIViewController Transitioning](http://www.swiftkickmobile.com/elegant-custom-uiviewcontroller-transitioning-uiviewcontrollertransitioningdelegate-uiviewcontrolleranimatedtransitioning/) to learn a great technique you can use to build your own custom segues that utilize `UIViewControllerTransitioningDelegate` and `UIViewControllerAnimatedTransitioning`.
 
 ## Installation
 
@@ -129,9 +129,9 @@ var config = SwiftMessages.Config()
 // Slide up from the bottom.
 config.presentationStyle = .bottom
 
-// Display in a window at the specified window level: UIWindow.Level.statusBar
-// displays over the status bar while UIWindow.Level.normal displays under.
-config.presentationContext = .window(windowLevel: .statusBar)
+// Display in a window at the specified window level: UIWindowLevelStatusBar
+// displays over the status bar while UIWindowLevelNormal displays under.
+config.presentationContext = .window(windowLevel: UIWindowLevelStatusBar)
 
 // Disable the default auto-hiding behavior.
 config.duration = .forever
@@ -262,7 +262,7 @@ let view: MessageView = try! SwiftMessages.viewFromNib(named: "MyCustomNib")
 let view: MyCustomView = try! SwiftMessages.viewFromNib()
 ````
 
-#### MessageView Class
+#### MessageView
 
 
 [`MessageView`](./SwiftMessages/MessageView.swift) is a light-weight view that all of the bundled designs use. It primarily consists of the following optional `@IBOutlet` properties:
@@ -319,15 +319,15 @@ The suggested method for starting with `MessageView` as a base and __adding new 
   1. (recommended) override the implementation of `AccessibleMessage` as needed to incorporate new elements into Voice Over.
   1. Use one of the nib-loading methods above to load the view.
 
-#### BaseView Class
+#### BaseView
 
 [`BaseView`](./SwiftMessages/BaseView.swift) is the superclass of `MessageView` and provides numerous options that aren't specific to the "title + body + icon + button" design of `MessageView`. Custom views that are significantly different from `MessageView`, such as a progress indicator, should subclass `BaseView`.
 
-#### CornerRoundingView Class
+#### CornerRoundingView
 
 [`CornerRoundingView`](./SwiftMessages/CornerRoundingView.swift) is a custom view that messages can use for rounding all or a subset of corners with squircles (the smoother method of rounding corners that you see on app icons). The nib files that feature rounded corners have `backgroundView` assigned to a `CornerRoundingView`. It provides a `roundsLeadingCorners` option to dynamically round only the leading corners of the view when presented from top or bottom (a feature used for the tab-style layouts).
 
-#### Animator Protocol
+#### Animator
 
 [`Animator`](./SwiftMessages/Animator.swift) is the protocol that SwiftMessages uses for presentation and dismissal animations. Custom animations can be done through the `SwiftMessages.PresentationStyle.custom(animator:)`. Some related components:
 * [`TopBottomAnimation`](./SwiftMessages/TopBottomAnimation.swift) is a sliding implementation of `Animator` used internally by `.top` and `.bottom` presentation styles. It provides some customization options.
@@ -336,23 +336,23 @@ The suggested method for starting with `MessageView` as a base and __adding new 
 
 High-quality PRs for cool `Animator` implementations are welcome!
 
-#### MarginAdjustable Protocol
+#### MarginAdjustable
 
 [`MarginAdjustable`](./SwiftMessages/MarginAdjustable.swift) is a protocol adopted by `BaseView`. If the view being presented adopts `MarginAdjustable`, SwiftMessages takes ownership of the view's layout margins to ensure ideal spacing across the full range of presentation contexts.
 
-#### BackgroundViewable Protocol
+#### BackgroundViewable
 
 [`BackgroundViewable`](./SwiftMessages/BackgroundViewable.swift) is a protocol adopted by `BaseView` and requires that a view provide a single `backgroundView` property. `BaseView` initializes `backgroundView = self`, which you can freely re-assign to any subview.
 
 If the view being presented adopts `BackgroundViewable`, SwiftMessages will ignore touches outside of `backgroundView`. This is important because message views always span the full width of the device. Card and tab-style layouts appear inset from the edges of the device because the message view's background is transparent and `backgroundView` is assigned to a subview constrained to the layout margins. In these layouts, touches in the transparent margins should be ignored.
 
-#### Identifiable Protocol
+#### Identifiable
 
 [`Identifiable`](./SwiftMessages/Identifiable.swift) is a protocol adopted by `MessageView` and requires that a view provide a single `id` property, which SwiftMessages uses for message deduplication.
 
 `MessageView` computes the `id` based on the message content, but `id` can also be set explicitly as needed.
 
-#### AccessibleMessage Protocol
+#### AccessibleMessage
 
 [`AccessibleMessage`](./SwiftMessages/AccessibleMessage.swift) is a protocol adopted by `MessageView`. If the view being presented adopts `AccessibleMessage`, SwiftMessages provides improved Voice Over.
 

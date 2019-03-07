@@ -109,32 +109,6 @@ open class SwiftMessagesSegue: UIStoryboardSegue {
         case backgroundVertical
     }
 
-    /// The presentation style to use. See the SwiftMessages.PresentationStyle for details.
-    public var presentationStyle: SwiftMessages.PresentationStyle {
-        get { return messenger.defaultConfig.presentationStyle }
-        set { messenger.defaultConfig.presentationStyle = newValue }
-    }
-
-    /// The dim mode to use. See the SwiftMessages.DimMode for details.
-    public var dimMode: SwiftMessages.DimMode {
-        get { return messenger.defaultConfig.dimMode}
-        set { messenger.defaultConfig.dimMode = newValue }
-    }
-
-    /// Specifies whether or not the interactive pan-to-hide gesture is enabled
-    /// on the message view. The default value is `true`, but may not be appropriate
-    /// for view controllers that use swipe or pan gestures.
-    public var interactiveHide: Bool {
-        get { return messenger.defaultConfig.interactiveHide }
-        set { messenger.defaultConfig.interactiveHide = newValue }
-    }
-
-    /// Specifies an optional array of event listeners.
-    public var eventListeners: [SwiftMessages.EventListener] {
-        get { return messenger.defaultConfig.eventListeners }
-        set { messenger.defaultConfig.eventListeners = newValue }
-    }
-
     /**
      The view that is passed to `SwiftMessages.show(config:view:)` during presentation.
      The view controller's view is installed into `containerView`, which is itself installed
@@ -158,9 +132,29 @@ open class SwiftMessagesSegue: UIStoryboardSegue {
      */
     public var containment: Containment = .content
 
+    /// The presentation style to use. See the SwiftMessages.PresentationStyle for details.
+    public var presentationStyle: SwiftMessages.PresentationStyle {
+        get { return messenger.defaultConfig.presentationStyle }
+        set { messenger.defaultConfig.presentationStyle = newValue }
+    }
+
+    /// The dim mode to use. See the SwiftMessages.DimMode for details.
+    public var dimMode: SwiftMessages.DimMode {
+        get { return messenger.defaultConfig.dimMode}
+        set { messenger.defaultConfig.dimMode = newValue }
+    }
+
+    /// Specifies whether or not the interactive pan-to-hide gesture is enabled
+    /// on the message view. The default value is `true`, but may not be appropriate
+    /// for view controllers that use swipe or pan gestures.
+    public var interactiveHide: Bool {
+        get { return messenger.defaultConfig.interactiveHide }
+        set { messenger.defaultConfig.interactiveHide = newValue }
+    }
+
     private var messenger = SwiftMessages()
     private var selfRetainer: SwiftMessagesSegue? = nil
-    private lazy var hider = { return TransitioningDismisser(segue: self) }()
+    private lazy var hider = { return Hider(segue: self) }()
 
     private lazy var presenter = {
         return Presenter(config: messenger.defaultConfig, view: messageView, delegate: messenger)
@@ -195,32 +189,32 @@ extension SwiftMessagesSegue {
         messageView.configureDropShadow()
         switch layout {
         case .topMessage:
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(20, 20, 20, 20)
             messageView.collapseLayoutMarginAdditions = false
             let animation = TopBottomAnimation(style: .top)
             animation.springDamping = 1
             presentationStyle = .custom(animator: animation)
         case .bottomMessage:
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(20, 20, 20, 20)
             messageView.collapseLayoutMarginAdditions = false
             let animation = TopBottomAnimation(style: .bottom)
             animation.springDamping = 1
             presentationStyle = .custom(animator: animation)
         case .topCard:
             containment = .background
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(10, 10, 10, 10)
             messageView.collapseLayoutMarginAdditions = true
             containerView.cornerRadius = 15
             presentationStyle = .top
         case .bottomCard:
             containment = .background
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(10, 10, 10, 10)
             messageView.collapseLayoutMarginAdditions = true
             containerView.cornerRadius = 15
             presentationStyle = .bottom
         case .topTab:
             containment = .backgroundVertical
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(20, 10, 20, 10)
             messageView.collapseLayoutMarginAdditions = true
             containerView.cornerRadius = 15
             containerView.roundsLeadingCorners = true
@@ -229,7 +223,7 @@ extension SwiftMessagesSegue {
             presentationStyle = .custom(animator: animation)
         case .bottomTab:
             containment = .backgroundVertical
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(20, 10, 20, 10)
             messageView.collapseLayoutMarginAdditions = true
             containerView.cornerRadius = 15
             containerView.roundsLeadingCorners = true
@@ -238,7 +232,7 @@ extension SwiftMessagesSegue {
             presentationStyle = .custom(animator: animation)
         case .centered:
             containment = .backgroundVertical
-            messageView.layoutMarginAdditions = UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+            messageView.layoutMarginAdditions = UIEdgeInsetsMake(20, 10, 20, 10)
             messageView.collapseLayoutMarginAdditions = true
             containerView.cornerRadius = 15
             presentationStyle = .center
@@ -248,7 +242,7 @@ extension SwiftMessagesSegue {
 
 extension SwiftMessagesSegue: UIViewControllerTransitioningDelegate {
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let shower = TransitioningPresenter(segue: self)
+        let shower = Shower(segue: self)
         messenger.defaultConfig.eventListeners.append { [unowned self] in
             switch $0 {
             case .didShow:
@@ -274,7 +268,7 @@ extension SwiftMessagesSegue: UIViewControllerTransitioningDelegate {
 }
 
 extension SwiftMessagesSegue {
-    private class TransitioningPresenter: NSObject, UIViewControllerAnimatedTransitioning {
+    private class Shower: NSObject, UIViewControllerAnimatedTransitioning {
 
         fileprivate private(set) var completeTransition: ((Bool) -> Void)?
         private weak var segue: SwiftMessagesSegue?
@@ -303,7 +297,15 @@ extension SwiftMessagesSegue {
             }
             completeTransition = transitionContext.completeTransition
             let transitionContainer = transitionContext.containerView
-            segue.containerView.addSubview(toView)
+            // Setup the layout of the `toView`
+            do {
+                toView.translatesAutoresizingMaskIntoConstraints = false
+                segue.containerView.addSubview(toView)
+                toView.topAnchor.constraint(equalTo: segue.containerView.topAnchor).isActive = true
+                toView.bottomAnchor.constraint(equalTo: segue.containerView.bottomAnchor).isActive = true
+                toView.leftAnchor.constraint(equalTo: segue.containerView.leftAnchor).isActive = true
+                toView.rightAnchor.constraint(equalTo: segue.containerView.rightAnchor).isActive = true
+            }
             // Install the `toView` into the message view.
             switch segue.containment {
             case .content:
@@ -321,7 +323,7 @@ extension SwiftMessagesSegue {
 }
 
 extension SwiftMessagesSegue {
-    private class TransitioningDismisser: NSObject, UIViewControllerAnimatedTransitioning {
+    private class Hider: NSObject, UIViewControllerAnimatedTransitioning {
 
         fileprivate private(set) var completeTransition: ((Bool) -> Void)?
         private weak var segue: SwiftMessagesSegue?

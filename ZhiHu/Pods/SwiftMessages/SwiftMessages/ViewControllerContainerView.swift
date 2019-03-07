@@ -19,17 +19,8 @@ open class ViewControllerContainerView: CornerRoundingView {
     open override var intrinsicContentSize: CGSize {
         if let preferredHeight = viewController?.preferredContentSize.height,
             preferredHeight > 0 {
-            return CGSize(width: UIView.noIntrinsicMetric, height: preferredHeight)
+            return CGSize(width: UIViewNoIntrinsicMetric, height: preferredHeight)
         }
         return super.intrinsicContentSize
-    }
-
-    open override func addSubview(_ view: UIView) {
-        view.translatesAutoresizingMaskIntoConstraints = false
-        super.addSubview(view)
-        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        view.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        view.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
 }
