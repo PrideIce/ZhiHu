@@ -32,10 +32,6 @@ class HomeRecommendImageCell: ZHHomeBaseCell {
             make.width.equalTo(100)
             make.height.equalTo(70)
         }
-        
-//        profileLabel.snp.makeConstraints { (make) in
-//            make.right.equalTo(zhImageView.snp.left).offset(-10)
-//        }
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -94,7 +94,6 @@ class ZHHomeBaseCell: UITableViewCell {
             make.left.equalTo(nameLabel.snp.right).offset(6)
             make.right.equalToSuperview().offset(-10)
         }
-        // profileLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultLow, for: UILayoutConstraintAxis.horizontal)
 
         contentView.addSubview(contentLabel)
         contentLabel.snp.makeConstraints { make in

@@ -9,15 +9,12 @@
 import DNSPageView
 import UIKit
 
+
 class ZHHomeController: ZHBaseVC {
-    let barHeight: CGFloat = 30
+    let titles = ["关注", "推荐", "热榜", "视频"]
+    let viewControllers = [UIViewController(), ZHRecommendVC(), ZHHotVC(), UIViewController()]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // 搜索栏
-        initSearchBar()
-
+    lazy var pageView: DNSPageView = {
         // 创建DNSPageStyle，设置样式
         let style = DNSPageStyle()
         style.isTitleViewScrollEnabled = false
@@ -27,13 +24,46 @@ class ZHHomeController: ZHBaseVC {
         style.titleColor = UIColor.gray
         style.bottomLineColor = UIColor.black
         style.bottomLineHeight = 2
+        
+        let frame = CGRect(x: 0, y: NavigationBarHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight - 44)
+        let pageView = DNSPageView(frame: frame,
+                                   style: style,
+                                   titles: titles,
+                                   childViewControllers: viewControllers,
+                                   startIndex: 1)
+        return pageView
+    }()
+    
+    lazy var searchTextField: UITextField = {
+        let textField = UITextField.init(frame: CGRect(x: 15, y: StatusBarHeight + 10, width: ScreenWidth - 100, height: 30))
+        textField.placeholder = "超一亿人朋友圈仅3天可见"
+        textField.layer.masksToBounds = true
+        textField.layer.cornerRadius = 5
+        textField.textAlignment = NSTextAlignment.center
+        textField.backgroundColor = RGBColor(240, 240, 240)
+        textField.delegate = self
+        return textField
+    }()
+    
+    lazy var questionBtn: UIButton = {
+        let questionBtn = UIButton.init(type: UIButtonType.system)
+        questionBtn.frame = CGRect(x: ScreenWidth - 85, y: StatusBarHeight + 10, width: 80, height: 30)
+        questionBtn.setTitle("提问", for: UIControlState.normal)
+        questionBtn.setImage(UIImage(named: "ZHModuleColumnImage.bundle/Night_ZHAPP_Ask_Post"), for: UIControlState.normal)
+        questionBtn.blueTheme()
+        questionBtn.addTarget(self, action: #selector(questionAction(button:)), for: UIControlEvents.touchUpInside)
+        return questionBtn
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        let titles = ["关注", "推荐", "热榜", "视频"]
-        let viewControllers: [UIViewController] = [UIViewController(), ZHRecommendVC(), ZHHotVC(), UIViewController()]
+        // 搜索栏
+        initSearchBar()
+
         for vc in viewControllers {
             addChildViewController(vc)
         }
-        let pageView = DNSPageView(frame: CGRect(x: 0, y: StatusBarHeight + 10 + barHeight, width: ScreenWidth, height: ScreenHeight - NavigationBarHeight - 44), style: style, titles: titles, childViewControllers: viewControllers, startIndex: 1)
         view.addSubview(pageView)
     }
     
@@ -44,22 +74,7 @@ class ZHHomeController: ZHBaseVC {
     }
 
     func initSearchBar() {
-        let textField = UITextField.init(frame: CGRect(x: 15, y: StatusBarHeight + 10, width: ScreenWidth - 100, height: barHeight))
-        
-        textField.placeholder = "超一亿人朋友圈仅3天可见"
-        textField.layer.masksToBounds = true
-        textField.layer.cornerRadius = 5
-        textField.textAlignment = NSTextAlignment.center
-        textField.backgroundColor = UIColor(red: 240 / 255.0, green: 240 / 255.0, blue: 240 / 255.0, alpha: 1)
-        textField.delegate = self
-        view.addSubview(textField)
-        
-        let questionBtn = UIButton.init(type: UIButtonType.system)
-        questionBtn.frame = CGRect(x: ScreenWidth - 85, y: StatusBarHeight + 10, width: 80, height: barHeight)
-        questionBtn.setTitle("提问", for: UIControlState.normal)
-        questionBtn.setImage(UIImage(named: "ZHModuleColumnImage.bundle/Night_ZHAPP_Ask_Post"), for: UIControlState.normal)
-        questionBtn.blueTheme()
-        questionBtn.addTarget(self, action: #selector(questionAction(button:)), for: UIControlEvents.touchUpInside)
+        view.addSubview(searchTextField)
         view.addSubview(questionBtn)
     }
 }
