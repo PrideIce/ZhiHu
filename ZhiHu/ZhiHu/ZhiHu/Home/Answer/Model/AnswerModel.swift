@@ -12,7 +12,7 @@ import HandyJSON
 //Question
 struct ZHQuestion: HandyJSON {
     var title: String?
-    var answer_count: Int?
+    var answer_count: Int = 0
     var answerList: [ZHAnswer]?
     var id: String?
 }
@@ -22,10 +22,10 @@ struct ZHAnswer: HandyJSON {
     var id: String?
     var author: ZHAuthor?
     var excerpt: String?
-    var voteup_count: Int?
-    var thanks_count: Int?
-    var comment_count: Int?
-    var updated_time: Int?
+    var voteup_count: Int = 0
+    var thanks_count: Int = 0
+    var comment_count: Int = 0
+    var updated_time: Int = 0
     var thumbnail_info:ThumbnailInfo?
 }
 
@@ -39,7 +39,7 @@ struct ZHThumbnail: HandyJSON {
 
 struct ZHFirstAnswer: HandyJSON {
     var excerpt: String?
-    var voteup_count: Int?
+    var voteup_count: Int = 0
     var pagination_info: AnswerIdList?
     var author: ZHAuthor?
 }
@@ -49,11 +49,11 @@ struct AnswerIdList: HandyJSON {
 }
 
 struct ZHAuthor: HandyJSON {
-    var is_followed: Bool?
-    var gender: Int?
+    var is_followed: Bool = false
+    var gender: Int = 0
     var avatar_url: String?
     var headline: String?
     var id: String?
     var name: String?
-    var is_privacy: Bool?
+    var is_privacy: Bool = false
 }

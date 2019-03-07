@@ -83,13 +83,13 @@ struct ZHMember: HandyJSON {
     var name: String?
     var avatar_url: String?
     var headline: String?
-    var gender: Int?
+    var gender: Int = 0
 }
 
 // 视频
 struct RecomVideo: HandyJSON {
     var id: String?
-    var duration_in_seconds: Int?
+    var duration_in_seconds: Int = 0
     var thumbnail: RecomThumbnail?
     var playlist: RecomPlayList?
 }

@@ -81,7 +81,7 @@ extension ZHHotVC : UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HotListCell
         let model = self.recommendModelList?[indexPath.row]
         cell.titleLabel.text = model?.target?.title_area?.text
-        let url = URL(string: (model?.target?.image_area?.url)!)
+        let url = URL(string: model?.target?.image_area?.url ?? "")
         cell.hotImageView.kf.setImage(with: url)
         cell.footerLabel.text = model?.target?.metrics_area?.text
         return cell

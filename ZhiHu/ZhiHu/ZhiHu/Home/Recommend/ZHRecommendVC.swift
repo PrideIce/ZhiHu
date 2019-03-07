@@ -6,11 +6,11 @@
 //  Copyright © 2019 陈逸辰. All rights reserved.
 //
 
+import UIKit
 import Alamofire
 import HandyJSON
 import MJRefresh
 import SwiftyJSON
-import UIKit
 
 class ZHRecommendVC: ZHBaseVC {
     let ZHHomeBaseCellID = "ZHHomeBaseCell"

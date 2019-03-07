@@ -149,7 +149,7 @@ class ZHAnswerDetailVC: ZHBaseVC {
         }
 
         answerIdList = [self.answerId!]
-        QuestionProvider.request(.detail(answerId!)) { result in
+        AnswerProvider.request(.detail(answerId!)) { result in
             if case let .success(response) = result {
                 // 解析数据
                 let data = try? response.mapJSON()
@@ -163,7 +163,7 @@ class ZHAnswerDetailVC: ZHBaseVC {
             }
         }
 
-        QuestionProvider.request(.question(answerId!)) { result in
+        AnswerProvider.request(.question(answerId!)) { result in
             if case let .success(response) = result {
                 // 解析数据
                 let data = try? response.mapJSON()

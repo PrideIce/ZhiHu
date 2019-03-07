@@ -99,13 +99,14 @@ class QuestionBaseCell: UITableViewCell {
     
     var model: ZHAnswer? {
         didSet {
-            let url = URL(string: model?.author?.avatar_url ?? "")
+            guard let model = model else { return }
+            let url = URL(string: model.author?.avatar_url ?? "")
             headImgView.kf.setImage(with: url, placeholder: UIImage(named: "UserGuestCenterBundle.bundle/Avatar_Liukanshan_Normal"))
-            nameLabel.text = model?.author?.name
-            contentLabel.text = model?.excerpt
-            let up = model?.voteup_count ?? 0
-            let thanks = model?.thanks_count ?? 0
-            let comment = model?.comment_count ?? 0
+            nameLabel.text = model.author?.name
+            contentLabel.text = model.excerpt
+            let up = model.voteup_count
+            let thanks = model.thanks_count
+            let comment = model.comment_count
             footerLabel.text = "\(up) 赞同 · \(thanks) 感谢 · \(comment) 评论 · 10小时前"
         }
     }

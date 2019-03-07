@@ -82,7 +82,7 @@ class ZHQuestionVC: ZHBaseVC {
     }
 
     func refreshDataSource() {
-        QuestionProvider.request(.list(questionId, offset)) { result in
+        AnswerProvider.request(.list(questionId, offset)) { result in
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
 

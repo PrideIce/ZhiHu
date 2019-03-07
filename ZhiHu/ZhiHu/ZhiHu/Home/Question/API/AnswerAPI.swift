@@ -11,7 +11,7 @@ import HandyJSON
 import Moya
 
 // 首页推荐接口
-let QuestionProvider = MoyaProvider<AnswerAPI>()
+let AnswerProvider = MoyaProvider<AnswerAPI>()
 
 enum AnswerAPI {
     case list(String, Int)
@@ -54,7 +54,7 @@ extension AnswerAPI: TargetType {
         case .detail:
             parmeters = ["with_pagination": 1]
         case .question(_):
-            return .requestPlain
+            return .requestPlain            
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)
     }
