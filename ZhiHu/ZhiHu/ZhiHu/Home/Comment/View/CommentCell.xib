@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCellID" rowHeight="121" id="KGk-i7-Jjw" customClass="CommentCell" customModule="ZhiHu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DU8-J3-1di">
+                        <rect key="frame" x="10" y="15" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="DFi-qQ-msZ"/>
+                            <constraint firstAttribute="width" constant="25" id="uTt-zV-rEY"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsR-b7-Bf3">
+                        <rect key="frame" x="51" y="15" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="积极思考对方就开始飞机开始点击是打开方式的看法" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jco-hT-Rio">
+                        <rect key="frame" x="51" y="41" width="249" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-3f-j4g">
+                        <rect key="frame" x="51" y="82" width="32" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05Q-0z-StX">
+                        <rect key="frame" x="259" y="9" width="46" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="agc-Z6-X80"/>
+                            <constraint firstAttribute="width" constant="46" id="eDp-Da-8sT"/>
+                        </constraints>
+                        <state key="normal" image="ZHModuleDB.bundle/More_Normal"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdM-o3-Zw2">
+                        <rect key="frame" x="95" y="76" width="50" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="查看回复">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-MO-C52">
+                        <rect key="frame" x="215" y="74.5" width="50" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="APi-6l-1cg"/>
+                            <constraint firstAttribute="height" constant="30" id="jUL-YN-eLq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="1000 " image="ZHModuleDB.bundle/ZHDB_Badge_Comment_Like">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-hu-ecM">
+                        <rect key="frame" x="275" y="74.5" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="CVE-bb-gg5"/>
+                            <constraint firstAttribute="height" constant="30" id="huP-jG-xNN"/>
+                        </constraints>
+                        <state key="normal" image="ZHModuleDB.bundle/ZHDB_Badge_Comment">
+                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mz-fn-KR9">
+                        <rect key="frame" x="90" y="15" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Jco-hT-Rio" secondAttribute="trailing" constant="20" id="01F-Tr-iGL"/>
+                    <constraint firstItem="hsR-b7-Bf3" firstAttribute="leading" secondItem="DU8-J3-1di" secondAttribute="trailing" constant="16" id="27i-2h-yle"/>
+                    <constraint firstAttribute="bottom" secondItem="RHX-3f-j4g" secondAttribute="bottom" constant="24" id="3Sx-Mf-Pqo"/>
+                    <constraint firstItem="DU8-J3-1di" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="4gc-99-2iY"/>
+                    <constraint firstItem="hsR-b7-Bf3" firstAttribute="top" secondItem="DU8-J3-1di" secondAttribute="top" id="EaK-As-GhE"/>
+                    <constraint firstItem="Jco-hT-Rio" firstAttribute="leading" secondItem="hsR-b7-Bf3" secondAttribute="leading" id="Ezh-rc-6TS"/>
+                    <constraint firstItem="rVc-hu-ecM" firstAttribute="trailing" secondItem="05Q-0z-StX" secondAttribute="trailing" id="IZ9-o4-45M"/>
+                    <constraint firstItem="Jco-hT-Rio" firstAttribute="top" secondItem="hsR-b7-Bf3" secondAttribute="bottom" constant="8" id="Liu-1H-w1f"/>
+                    <constraint firstItem="4mz-fn-KR9" firstAttribute="centerY" secondItem="hsR-b7-Bf3" secondAttribute="centerY" id="Mfz-S4-azS"/>
+                    <constraint firstItem="4mz-fn-KR9" firstAttribute="leading" secondItem="hsR-b7-Bf3" secondAttribute="trailing" constant="8" id="QKg-WT-0Wc"/>
+                    <constraint firstItem="Cdo-MO-C52" firstAttribute="centerY" secondItem="rVc-hu-ecM" secondAttribute="centerY" id="QsJ-TW-jaC"/>
+                    <constraint firstAttribute="trailing" secondItem="05Q-0z-StX" secondAttribute="trailing" constant="15" id="TGR-RS-6T7"/>
+                    <constraint firstItem="MdM-o3-Zw2" firstAttribute="leading" secondItem="RHX-3f-j4g" secondAttribute="trailing" constant="12" id="VrA-NF-bAB"/>
+                    <constraint firstItem="05Q-0z-StX" firstAttribute="centerY" secondItem="hsR-b7-Bf3" secondAttribute="centerY" id="Zqe-4N-3UC"/>
+                    <constraint firstItem="RHX-3f-j4g" firstAttribute="leading" secondItem="Jco-hT-Rio" secondAttribute="leading" id="gLk-2Y-mZs"/>
+                    <constraint firstItem="rVc-hu-ecM" firstAttribute="centerY" secondItem="RHX-3f-j4g" secondAttribute="centerY" id="hAf-KP-ALh"/>
+                    <constraint firstItem="DU8-J3-1di" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rCP-9v-mPc"/>
+                    <constraint firstItem="MdM-o3-Zw2" firstAttribute="centerY" secondItem="RHX-3f-j4g" secondAttribute="centerY" id="wWa-rO-6vw"/>
+                    <constraint firstItem="RHX-3f-j4g" firstAttribute="top" secondItem="Jco-hT-Rio" secondAttribute="bottom" constant="7.5" id="y9U-9I-Wvb"/>
+                    <constraint firstItem="rVc-hu-ecM" firstAttribute="leading" secondItem="Cdo-MO-C52" secondAttribute="trailing" constant="10" id="zb2-xr-VEh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="137.59999999999999" y="166.8665667166417"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ZHModuleDB.bundle/More_Normal" width="16" height="16"/>
+        <image name="ZHModuleDB.bundle/ZHDB_Badge_Comment" width="16" height="16"/>
+        <image name="ZHModuleDB.bundle/ZHDB_Badge_Comment_Like" width="16" height="16"/>
+    </resources>
+</document>

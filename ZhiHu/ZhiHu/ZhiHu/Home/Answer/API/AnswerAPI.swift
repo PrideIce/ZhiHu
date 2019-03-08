@@ -17,6 +17,7 @@ enum AnswerAPI {
     case list(String, Int)
     case detail(String)
     case question(String)
+    case commentList(String)
 }
 
 extension AnswerAPI: TargetType {
@@ -28,12 +29,14 @@ extension AnswerAPI: TargetType {
     // 各个请求的具体路径
     public var path: String {
         switch self {
-        case .list(let questionId, _):
+        case let .list(questionId, _):
             return "/v4/questions/" + questionId + "/answers"
         case let .detail(answerId):
             return "/v4/answers/" + answerId
-        case let.question(answerId):
+        case let .question(answerId):
             return "/v4/answers/" + answerId + "/question"
+        case let .commentList(answerId):
+            return "/answers/" + answerId + "/root_comments"
         }
     }
 
@@ -53,7 +56,7 @@ extension AnswerAPI: TargetType {
                          "show_detail": 1]
         case .detail:
             parmeters = ["with_pagination": 1]
-        case .question(_):
+        default:
             return .requestPlain            
         }
         return .requestParameters(parameters: parmeters, encoding: URLEncoding.default)

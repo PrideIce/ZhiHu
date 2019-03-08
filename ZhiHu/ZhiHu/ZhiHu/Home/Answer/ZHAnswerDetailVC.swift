@@ -110,6 +110,14 @@ class ZHAnswerDetailVC: ZHBaseVC {
         return button
     }()
     
+    //透明的模拟评论按钮
+    let commentBtn: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(commentClick), for: .touchUpInside)
+        return button
+    }()
+    
     static func demoCentered() {
         let view = MessageView.viewFromNib(layout: .tabView)
         view.configureDropShadow()
@@ -134,7 +142,16 @@ class ZHAnswerDetailVC: ZHBaseVC {
     }
     
     @objc func commentClick() {
+        let vc = CommentListVC()
+        vc.answerId = answerId ?? ""
+        vc.preferredContentSize.height = ScreenHeight - StatusBarHeight
+        vc.view.layer.masksToBounds = true
+        vc.view.layer.cornerRadius = 10
         
+        let segue = SwiftMessagesSegue(identifier: nil, source: self, destination: vc)
+        segue.configure(layout: .bottomMessage)
+        prepare(for: segue, sender: nil)
+        segue.perform()
     }
     
     @objc func collectClick() {
@@ -201,6 +218,14 @@ class ZHAnswerDetailVC: ZHBaseVC {
             make.bottom.equalToSuperview().offset(-SafeBottomHeight - 5)
             make.width.height.equalTo(40)
             make.right.equalToSuperview().offset(-75)
+        }
+        
+        view.addSubview(commentBtn)
+        commentBtn.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-SafeBottomHeight - 5)
+            make.width.equalTo(55)
+            make.height.equalTo(40)
+            make.right.equalToSuperview().offset(-15)
         }
 
         answerIdList = [self.answerId!]
