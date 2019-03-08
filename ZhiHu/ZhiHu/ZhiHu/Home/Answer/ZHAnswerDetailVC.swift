@@ -102,6 +102,14 @@ class ZHAnswerDetailVC: ZHBaseVC {
         return label
     }()
     
+    //透明的模拟收藏按钮
+    let collectBtn: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.addTarget(self, action: #selector(collectClick), for: .touchUpInside)
+        return button
+    }()
+    
     static func demoCentered() {
         let view = MessageView.viewFromNib(layout: .tabView)
         view.configureDropShadow()
@@ -122,13 +130,18 @@ class ZHAnswerDetailVC: ZHBaseVC {
         SwiftMessages.show(config: config, view: view)
     }
     
-    func commentView() {
-        let vc = ZHQuestionVC()
-        vc.questionId = self.questionId
-        vc.questionTitle = self.questionTitle
-        vc.preferredContentSize.height = ScreenHeight - StatusBarHeight - 100
-        view.layer.masksToBounds = true
-        view.layer.cornerRadius = 10
+    @objc func writeAnswerClick() {
+    }
+    
+    @objc func commentClick() {
+        
+    }
+    
+    @objc func collectClick() {
+        let vc = CollectVC()
+        vc.preferredContentSize.height = 300
+        vc.view.layer.masksToBounds = true
+        vc.view.layer.cornerRadius = 10
         
         let segue = SwiftMessagesSegue(identifier: nil, source: self, destination: vc)
         segue.configure(layout: .bottomMessage)
@@ -148,14 +161,11 @@ class ZHAnswerDetailVC: ZHBaseVC {
         view.addSubview(headerView)
         headerView.actionBlock = { [unowned self] (btnIndex: Int) in
             if btnIndex == 0 {
-                let vc = ZHQuestionVC()
-                vc.questionId = self.questionId
-                vc.questionTitle = self.questionTitle
-                vc.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(vc, animated: true)
+                self.writeAnswerClick()
+            } else if btnIndex == 1 {
+                self.collectClick()
             } else if btnIndex == 2 {
-                //ZHAnswerDetailVC.demoCentered()
-                self.commentView()
+                self.commentClick()
             }
         }
 
@@ -184,6 +194,13 @@ class ZHAnswerDetailVC: ZHBaseVC {
             make.right.equalTo(view.snp.right).offset(-15)
             make.width.equalTo(110)
             make.height.equalTo(40)
+        }
+        
+        view.addSubview(collectBtn)
+        collectBtn.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(-SafeBottomHeight - 5)
+            make.width.height.equalTo(40)
+            make.right.equalToSuperview().offset(-75)
         }
 
         answerIdList = [self.answerId!]

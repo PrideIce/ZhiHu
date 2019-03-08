@@ -23,6 +23,8 @@
 		F810503B22101D46001C34BC /* ZHRecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810503A22101D46001C34BC /* ZHRecommendVC.swift */; };
 		F8305FF5222CBB8000A4BD90 /* ZHAnswerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8305FF4222CBB7F00A4BD90 /* ZHAnswerDetailVC.swift */; };
 		F833E5AC2230C5BD00B0AC47 /* D9DPQRAHr0.gif in Resources */ = {isa = PBXBuildFile; fileRef = F833E5AB2230C5BD00B0AC47 /* D9DPQRAHr0.gif */; };
+		F833E5B22232088500B0AC47 /* CollectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833E5B02232088500B0AC47 /* CollectVC.swift */; };
+		F833E5B32232088500B0AC47 /* CollectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F833E5B12232088500B0AC47 /* CollectVC.xib */; };
 		F859DBEB2227C0B200F6A62D /* ZHSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = F859DBEA2227C0B200F6A62D /* ZHSetting.swift */; };
 		F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AB221FC8A600908F2A /* AnswerModel.swift */; };
 		F86300AF221FCBC900908F2A /* ZHAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */; };
@@ -74,6 +76,8 @@
 		F810503A22101D46001C34BC /* ZHRecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHRecommendVC.swift; sourceTree = "<group>"; };
 		F8305FF4222CBB7F00A4BD90 /* ZHAnswerDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHAnswerDetailVC.swift; sourceTree = "<group>"; };
 		F833E5AB2230C5BD00B0AC47 /* D9DPQRAHr0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = D9DPQRAHr0.gif; sourceTree = "<group>"; };
+		F833E5B02232088500B0AC47 /* CollectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectVC.swift; sourceTree = "<group>"; };
+		F833E5B12232088500B0AC47 /* CollectVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectVC.xib; sourceTree = "<group>"; };
 		F859DBEA2227C0B200F6A62D /* ZHSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHSetting.swift; sourceTree = "<group>"; };
 		F86300AB221FC8A600908F2A /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
 		F86300AD221FCBC900908F2A /* ZHAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHAnswerCell.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		F8105019220EC78B001C34BC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F833E5AF2232082A00B0AC47 /* Collect */,
+				F833E5AE2232082600B0AC47 /* Comment */,
 				F810501E220EC83C001C34BC /* ZHHomeController.swift */,
 				F8105030220FEEC6001C34BC /* ZHHomeSearchVC.swift */,
 				F8105031220FEEC6001C34BC /* ZHHomeSearchVC.xib */,
@@ -244,6 +250,22 @@
 				F833E5AB2230C5BD00B0AC47 /* D9DPQRAHr0.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		F833E5AE2232082600B0AC47 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		F833E5AF2232082A00B0AC47 /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				F833E5B02232088500B0AC47 /* CollectVC.swift */,
+				F833E5B12232088500B0AC47 /* CollectVC.xib */,
+			);
+			path = Collect;
 			sourceTree = "<group>";
 		};
 		F86300A3221E968900908F2A /* Answer */ = {
@@ -456,6 +478,7 @@
 				F8DEECD9221AF2EF0060DBFB /* ZHModuleAppGuideImage.bundle in Resources */,
 				F8DEECDE221AF2EF0060DBFB /* ZMCert.bundle in Resources */,
 				F8DEECE0221AF2EF0060DBFB /* ZHModuleTopicImage.bundle in Resources */,
+				F833E5B32232088500B0AC47 /* CollectVC.xib in Resources */,
 				F8DEECDA221AF2EF0060DBFB /* Filters.bundle in Resources */,
 				F8DEECDB221AF2EF0060DBFB /* ZHModuleDB.bundle in Resources */,
 				F8DEECDF221AF2EF0060DBFB /* ZHModuleQA.bundle in Resources */,
@@ -554,6 +577,7 @@
 				F8DEECCC22152D230060DBFB /* HomeRecommendBigImageCell.swift in Sources */,
 				F859DBEB2227C0B200F6A62D /* ZHSetting.swift in Sources */,
 				F8305FF5222CBB8000A4BD90 /* ZHAnswerDetailVC.swift in Sources */,
+				F833E5B22232088500B0AC47 /* CollectVC.swift in Sources */,
 				F8B8107B222E477E00DF5F31 /* WLButton.swift in Sources */,
 				F810503622100C25001C34BC /* UIButton+ZHEx.swift in Sources */,
 				F86300AC221FC8A600908F2A /* AnswerModel.swift in Sources */,

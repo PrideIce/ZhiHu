@@ -6,6 +6,7 @@
 //  Copyright © 2017年 王垒. All rights reserved.
 //
 import UIKit
+import SnapKit
 
 // The width of the screen
 let WLWindowWidth = UIScreen.main.bounds.size.width
@@ -96,7 +97,9 @@ class WLButton: UIButton {
         }
         
         setTitle("", for: .normal)
-        self.frame = CGRect.init(x: self.frame.origin.x, y: self.frame.origin.y, width: 40, height: 40)
+        self.snp.updateConstraints { make in
+            make.width.equalTo(40)
+        }
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
