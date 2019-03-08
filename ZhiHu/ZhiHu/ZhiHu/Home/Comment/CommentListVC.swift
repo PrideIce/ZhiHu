@@ -65,7 +65,7 @@ extension CommentListVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 3
+        return 0.5
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -81,9 +81,9 @@ extension CommentListVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let model = self.commentList[indexPath.section]
+        let model = self.commentList[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: CommentCellID, for: indexPath) as! CommentCell
-        //cell.model = model
+        cell.model = model
         return cell
     }
     
