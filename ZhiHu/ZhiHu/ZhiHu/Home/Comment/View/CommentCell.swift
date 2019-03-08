@@ -34,6 +34,7 @@ class CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        selectionStyle = .none
         self.headImgView.layer.masksToBounds = true
         self.headImgView.layer.cornerRadius = 15
         

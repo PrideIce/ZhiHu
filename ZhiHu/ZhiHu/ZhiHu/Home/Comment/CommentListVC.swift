@@ -19,25 +19,8 @@ class CommentListVC: ZHBaseVC {
     
     var commentsCount: Int = 0
     var commentList: [CommentModel] = []
-    var answerId: String = "" {
-        didSet {
-            AnswerProvider.request(.commentList(answerId))  { result in
-                if case let .success(response) = result {
-                    // 解析数据
-                    let data = try? response.mapJSON()
-                    let json = JSON(data!)
-                    //print(json)
-                    
-                    if let object = JSONDeserializer<CommentListModel>.deserializeFrom(json: json.description) {
-                        self.commentsCount = object.common_counts
-                        self.commentList = object.data ?? []
-                        self.titleLabel.text = "全部 \(self.commentsCount) 条评论"
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }
-    }
+    var offset: Int = 0
+    var answerId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +29,44 @@ class CommentListVC: ZHBaseVC {
         tableView.register(cellNib, forCellReuseIdentifier: CommentCellID)
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.initRefreshView()
+        tableView.mj_header.refreshingBlock = { [weak self] in
+            self?.offset = 0
+            self?.refreshDataSource()
+        }
+        tableView.mj_footer.refreshingBlock = { [weak self] in
+            self?.offset += 10
+            self?.refreshDataSource()
+        }
+        tableView.mj_header.beginRefreshing()
     }
     
+    func refreshDataSource() {
+        AnswerProvider.request(.commentList(answerId, offset))  { result in
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
+            if case let .success(response) = result {
+                // 解析数据
+                let data = try? response.mapJSON()
+                let json = JSON(data!)
+                //print(json)
+                
+                if let object = JSONDeserializer<CommentListModel>.deserializeFrom(json: json.description) {
+                    self.commentsCount = object.common_counts
+                    self.titleLabel.text = "全部 \(self.commentsCount) 条评论"
+                    
+                    if self.offset == 0 {
+                        self.commentList = object.data ?? []
+                    } else {
+                        self.commentList += object.data ?? []
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
     
     @IBAction func closeAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

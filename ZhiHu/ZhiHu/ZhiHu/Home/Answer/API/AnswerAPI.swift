@@ -17,7 +17,7 @@ enum AnswerAPI {
     case list(String, Int)
     case detail(String)
     case question(String)
-    case commentList(String)
+    case commentList(String, Int)
 }
 
 extension AnswerAPI: TargetType {
@@ -35,7 +35,7 @@ extension AnswerAPI: TargetType {
             return "/v4/answers/" + answerId
         case let .question(answerId):
             return "/v4/answers/" + answerId + "/question"
-        case let .commentList(answerId):
+        case let .commentList(answerId, _):
             return "/answers/" + answerId + "/root_comments"
         }
     }
@@ -56,6 +56,9 @@ extension AnswerAPI: TargetType {
                          "show_detail": 1]
         case .detail:
             parmeters = ["with_pagination": 1]
+        case let .commentList(_,offset):
+            parmeters = ["limit": 10,
+                         "offset": offset]
         default:
             return .requestPlain            
         }
