@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CollectVC" customModule="ZhiHu" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Lj0-HB-cDC" id="AvT-Wt-1RH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,6 +51,10 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="282" id="IEN-2f-FfV"/>
                     </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="rgP-8P-BrM"/>
+                        <outlet property="delegate" destination="-1" id="gve-mB-7fr"/>
+                    </connections>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已选择 0 个收藏夹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csA-Tw-u5t">
                     <rect key="frame" x="125.5" y="16" width="124.5" height="18"/>
@@ -57,6 +62,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUx-Zl-3gJ">
+                    <rect key="frame" x="0.0" y="91.5" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="JNT-Uj-108"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vgf-lf-PuH">
+                    <rect key="frame" x="0.0" y="44" width="375" height="0.5"/>
+                    <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="5e0-a8-98O"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -64,10 +83,16 @@
                 <constraint firstItem="duc-gt-pAU" firstAttribute="top" secondItem="HpU-1l-XTA" secondAttribute="bottom" constant="15" id="8b7-2F-rK3"/>
                 <constraint firstItem="csA-Tw-u5t" firstAttribute="centerY" secondItem="HpU-1l-XTA" secondAttribute="centerY" id="ET8-Me-Jmb"/>
                 <constraint firstItem="HpU-1l-XTA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="GTR-mT-Qpz"/>
+                <constraint firstItem="Vgf-lf-PuH" firstAttribute="top" secondItem="HpU-1l-XTA" secondAttribute="bottom" constant="4" id="IeJ-cO-Qku"/>
+                <constraint firstItem="GUx-Zl-3gJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Lme-gK-i4b"/>
                 <constraint firstItem="HpU-1l-XTA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="bT1-ul-PGS"/>
                 <constraint firstAttribute="trailing" secondItem="Lj0-HB-cDC" secondAttribute="trailing" id="dG3-zn-tDD"/>
                 <constraint firstItem="csA-Tw-u5t" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dN9-cw-5kx"/>
+                <constraint firstItem="Lj0-HB-cDC" firstAttribute="top" secondItem="GUx-Zl-3gJ" secondAttribute="bottom" constant="5" id="jvj-ac-ORk"/>
+                <constraint firstAttribute="trailing" secondItem="Vgf-lf-PuH" secondAttribute="trailing" id="nhR-DK-fL4"/>
                 <constraint firstItem="duc-gt-pAU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="rA4-57-lZ5"/>
+                <constraint firstAttribute="trailing" secondItem="GUx-Zl-3gJ" secondAttribute="trailing" id="vjg-yY-TZE"/>
+                <constraint firstItem="Vgf-lf-PuH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="wwL-1M-Q0b"/>
                 <constraint firstItem="Lj0-HB-cDC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="x6y-95-lmH"/>
             </constraints>
             <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>

@@ -107,11 +107,5 @@ extension CommentListVC : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let model = answerList[indexPath.section]
-//        let vc = ZHAnswerDetailVC()
-//        vc.answerId = model.id ?? ""
-//        vc.questionTitle = questionTitle
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(vc, animated: true)
     }
 }

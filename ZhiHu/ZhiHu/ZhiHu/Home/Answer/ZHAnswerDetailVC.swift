@@ -156,7 +156,7 @@ class ZHAnswerDetailVC: ZHBaseVC {
     
     @objc func collectClick() {
         let vc = CollectVC()
-        vc.preferredContentSize.height = 300
+        vc.preferredContentSize.height = 400
         vc.view.layer.masksToBounds = true
         vc.view.layer.cornerRadius = 10
         
