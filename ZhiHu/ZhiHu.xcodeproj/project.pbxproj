@@ -33,6 +33,8 @@
 		F874508022324B6000D55178 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F874507F22324B6000D55178 /* CommentModel.swift */; };
 		F87450842232567700D55178 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87450822232567700D55178 /* CommentCell.swift */; };
 		F87450852232567700D55178 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F87450832232567700D55178 /* CommentCell.xib */; };
+		F88F9F142235FE64008FE02E /* CollectFoldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88F9F122235FE64008FE02E /* CollectFoldCell.swift */; };
+		F88F9F152235FE64008FE02E /* CollectFoldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F88F9F132235FE64008FE02E /* CollectFoldCell.xib */; };
 		F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820F822128AA200A780EF /* RecommendModel.swift */; };
 		F8A820FB2212A82D00A780EF /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */; };
 		F8B81070222D0E9100DF5F31 /* ZHQuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8106F222D0E9100DF5F31 /* ZHQuestionVC.swift */; };
@@ -91,6 +93,8 @@
 		F874507F22324B6000D55178 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		F87450822232567700D55178 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		F87450832232567700D55178 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		F88F9F122235FE64008FE02E /* CollectFoldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectFoldCell.swift; sourceTree = "<group>"; };
+		F88F9F132235FE64008FE02E /* CollectFoldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectFoldCell.xib; sourceTree = "<group>"; };
 		F8A820F822128AA200A780EF /* RecommendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendModel.swift; sourceTree = "<group>"; };
 		F8A820FA2212A82D00A780EF /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F8B8106F222D0E9100DF5F31 /* ZHQuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZHQuestionVC.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 		F833E5AF2232082A00B0AC47 /* Collect */ = {
 			isa = PBXGroup;
 			children = (
+				F88F9F112235FE07008FE02E /* View */,
 				F833E5B02232088500B0AC47 /* CollectVC.swift */,
 				F833E5B12232088500B0AC47 /* CollectVC.xib */,
 			);
@@ -314,6 +319,15 @@
 			children = (
 				F87450822232567700D55178 /* CommentCell.swift */,
 				F87450832232567700D55178 /* CommentCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F88F9F112235FE07008FE02E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F88F9F122235FE64008FE02E /* CollectFoldCell.swift */,
+				F88F9F132235FE64008FE02E /* CollectFoldCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,6 +526,7 @@
 				F833E5B32232088500B0AC47 /* CollectVC.xib in Resources */,
 				F8DEECDA221AF2EF0060DBFB /* Filters.bundle in Resources */,
 				F8DEECDB221AF2EF0060DBFB /* ZHModuleDB.bundle in Resources */,
+				F88F9F152235FE64008FE02E /* CollectFoldCell.xib in Resources */,
 				F8DEECDF221AF2EF0060DBFB /* ZHModuleQA.bundle in Resources */,
 				F87450852232567700D55178 /* CommentCell.xib in Resources */,
 				F8C3E19F220431BD004D2555 /* LaunchScreen.storyboard in Resources */,
@@ -604,6 +619,7 @@
 				F8DEECC62215114E0060DBFB /* HotListModel.swift in Sources */,
 				F8A820F922128AA200A780EF /* RecommendModel.swift in Sources */,
 				F810501F220EC83C001C34BC /* ZHHomeController.swift in Sources */,
+				F88F9F142235FE64008FE02E /* CollectFoldCell.swift in Sources */,
 				F8DEECC222144FF70060DBFB /* ZHHotVC.swift in Sources */,
 				F8B81078222D2E8A00DF5F31 /* QuestionBaseCell.swift in Sources */,
 				F8105029220EFACD001C34BC /* ZHBaseVC.swift in Sources */,
