@@ -43,12 +43,13 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="right" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05Q-0z-StX">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05Q-0z-StX">
                         <rect key="frame" x="269" y="9" width="46" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="agc-Z6-X80"/>
                             <constraint firstAttribute="width" constant="46" id="eDp-Da-8sT"/>
                         </constraints>
+                        <color key="tintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" image="ZHModuleDB.bundle/More_Normal"/>
                         <connections>
                             <action selector="menuClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="H3X-9H-cmJ"/>
@@ -79,13 +80,13 @@
                             <action selector="upClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="kuw-ea-Eks"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-hu-ecM">
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-hu-ecM">
                         <rect key="frame" x="277" y="58" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="CVE-bb-gg5"/>
                             <constraint firstAttribute="height" constant="30" id="huP-jG-xNN"/>
                         </constraints>
-                        <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" image="ZHModuleDB.bundle/ZHDB_Badge_Comment">
                             <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
@@ -99,6 +100,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcx-2d-qRv">
+                        <rect key="frame" x="56" y="114" width="264" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="GtS-Jh-9q6"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Jco-hT-Rio" secondAttribute="trailing" constant="20" id="01F-Tr-iGL"/>
@@ -110,15 +118,18 @@
                     <constraint firstItem="Jco-hT-Rio" firstAttribute="leading" secondItem="hsR-b7-Bf3" secondAttribute="leading" id="Ezh-rc-6TS"/>
                     <constraint firstItem="Jco-hT-Rio" firstAttribute="top" secondItem="hsR-b7-Bf3" secondAttribute="bottom" constant="8" id="Liu-1H-w1f"/>
                     <constraint firstItem="4mz-fn-KR9" firstAttribute="centerY" secondItem="hsR-b7-Bf3" secondAttribute="centerY" id="Mfz-S4-azS"/>
+                    <constraint firstItem="fcx-2d-qRv" firstAttribute="leading" secondItem="hsR-b7-Bf3" secondAttribute="leading" id="PnZ-Dh-8UO"/>
                     <constraint firstItem="4mz-fn-KR9" firstAttribute="leading" secondItem="hsR-b7-Bf3" secondAttribute="trailing" constant="8" id="QKg-WT-0Wc"/>
                     <constraint firstItem="Cdo-MO-C52" firstAttribute="centerY" secondItem="rVc-hu-ecM" secondAttribute="centerY" id="QsJ-TW-jaC"/>
                     <constraint firstAttribute="trailing" secondItem="05Q-0z-StX" secondAttribute="trailing" constant="5" id="TGR-RS-6T7"/>
                     <constraint firstItem="MdM-o3-Zw2" firstAttribute="leading" secondItem="RHX-3f-j4g" secondAttribute="trailing" constant="12" id="VrA-NF-bAB"/>
                     <constraint firstItem="05Q-0z-StX" firstAttribute="centerY" secondItem="hsR-b7-Bf3" secondAttribute="centerY" id="Zqe-4N-3UC"/>
+                    <constraint firstAttribute="bottom" secondItem="fcx-2d-qRv" secondAttribute="bottom" id="dqK-FN-zXl"/>
                     <constraint firstItem="RHX-3f-j4g" firstAttribute="leading" secondItem="Jco-hT-Rio" secondAttribute="leading" id="gLk-2Y-mZs"/>
                     <constraint firstItem="rVc-hu-ecM" firstAttribute="centerY" secondItem="RHX-3f-j4g" secondAttribute="centerY" id="hAf-KP-ALh"/>
                     <constraint firstItem="DU8-J3-1di" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="rCP-9v-mPc"/>
                     <constraint firstItem="MdM-o3-Zw2" firstAttribute="centerY" secondItem="RHX-3f-j4g" secondAttribute="centerY" id="wWa-rO-6vw"/>
+                    <constraint firstAttribute="trailing" secondItem="fcx-2d-qRv" secondAttribute="trailing" id="wrx-Hg-wzK"/>
                     <constraint firstItem="RHX-3f-j4g" firstAttribute="top" secondItem="Jco-hT-Rio" secondAttribute="bottom" constant="7.5" id="y9U-9I-Wvb"/>
                     <constraint firstItem="rVc-hu-ecM" firstAttribute="leading" secondItem="Cdo-MO-C52" secondAttribute="trailing" constant="10" id="zb2-xr-VEh"/>
                 </constraints>

@@ -138,7 +138,12 @@ class ZHAnswerDetailVC: ZHBaseVC {
         SwiftMessages.show(config: config, view: view)
     }
     
-    @objc func writeAnswerClick() {
+    @objc func allAnswersClick() {
+        let vc = ZHQuestionVC()
+        vc.questionId = self.questionId
+        vc.questionTitle = self.questionTitle
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func commentClick() {
@@ -178,7 +183,7 @@ class ZHAnswerDetailVC: ZHBaseVC {
         view.addSubview(headerView)
         headerView.actionBlock = { [unowned self] (btnIndex: Int) in
             if btnIndex == 0 {
-                self.writeAnswerClick()
+                self.allAnswersClick()
             } else if btnIndex == 1 {
                 self.collectClick()
             } else if btnIndex == 2 {

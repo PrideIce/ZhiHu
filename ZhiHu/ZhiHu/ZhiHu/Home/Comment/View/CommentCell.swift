@@ -42,6 +42,9 @@ class CommentCell: UITableViewCell {
         replyBtn.setImage(replyImage, for: .normal)
         let upImage = UIImage(named: "ZHModuleDB.bundle/ZHDB_Badge_Comment_Like")?.withRenderingMode(.alwaysTemplate)
         upBtn.setImage(upImage, for: .normal)
+        
+        menuBtn.imageEdgeInsets = UIEdgeInsets(top: 6, left: 8, bottom: 6, right: 8)
+        replyBtn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
