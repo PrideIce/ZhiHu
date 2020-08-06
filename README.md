@@ -11,7 +11,7 @@ Swift在一步步发展和完善，期待已久的Swift 5.0也出来了!
 涉及到的知识点：
 1. 逆向和砸壳、抓包
 
-2. App架构：主要采用MVVM模式，同时采用较多的成熟第三方框架  
+2. App架构比较简单，采用较多的成熟第三方框架  
    a. 网络层：Moya(对Alamofire的封装） 
    b. 数据层：SwiftyJson、HandyJson  
    c. UI层：SnapKit、Kingfisher  
